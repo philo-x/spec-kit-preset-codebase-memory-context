@@ -278,21 +278,19 @@ def test_generator_command_is_complete_and_satisfies_structural_contract():
     assert "## Scope Guard" in content
     assert "## Pre-Execution Checks" in content
     assert "### Project Setup Verification" in content
-    assert "### Output Ownership Verification" in content
-    assert "### Output Template Verification" in content
-    assert "### Before Hooks" in content
+    assert "### Output Ownership and Template" in content
+    assert "### Hook Rules and Before Hooks" in content
+    assert "## Evidence Rules" in content
     assert "## Outline" in content
-    assert "1. **Discover the repository structure**" in content
-    assert "2. **Identify applicable analysis areas**" in content
-    assert "3. **Inspect current repository evidence**" in content
-    assert "4. **Trace representative flows and identify code anchors**" in content
-    assert "5. **Review evidence coverage and limitations**" in content
-    assert "6. **Synthesize and validate the context**" in content
-    assert "7. **Write the target context safely**" in content
+    assert "1. **Discover scope and applicable architecture**" in content
+    assert "2. **Verify representative implementations and code anchors**" in content
+    assert "3. **Synthesize and validate the context**" in content
+    assert "4. **Commit the target safely**" in content
     assert "## Mandatory Post-Execution Hooks" in content
     assert "## Completion Report" in content
-    assert "## Evidence Rules" in content
     assert "## Done When" in content
+    assert content.index("## Evidence Rules") < content.index("## Outline")
+    assert 10000 <= len(content) <= 12000
 
     # File target and template
     assert ".specify/memory/codebase.md" in content

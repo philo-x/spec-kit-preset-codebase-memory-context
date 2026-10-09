@@ -6,6 +6,11 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Compressed `speckit.codebase-memory` command into a concise operational contract (11,993 bytes, 49.06% reduction from 23,544 bytes) to eliminate rule duplication and minimize prompt context overhead while retaining all critical safety constraints.
+- Streamlined lifecycle structure: moved `Evidence Rules` before `Outline`, consolidated analysis and commit into a 4-step execution flow, centralized common hook rules in `Pre-Execution Checks`, and condensed `Done When` into 5 focused verification items.
+
 ## [1.1.0] - 2026-10-09
 
 ### Added
