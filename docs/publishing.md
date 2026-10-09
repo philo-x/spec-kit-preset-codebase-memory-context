@@ -1,4 +1,4 @@
-# Publishing readiness — v1.1.0 candidate
+# Publishing v1.1.0
 
 Reference: [Spec Kit Preset Publishing Guide](https://github.com/github/spec-kit/blob/main/presets/PUBLISHING.md).
 The command baseline is the immutable Spec Kit v1.1.2 tag; the publishing guide
@@ -39,24 +39,25 @@ catalog has been updated.
 2. Perform and record current-agent field validation on an established repository
    without graph access, then optionally with graph enhancement. Cover creation,
    refresh, override preservation, unowned/malformed targets, source changes,
-   excluded paths, hooks, and safe commit availability. Inspect actual outcomes.
+   excluded paths, hooks, and writing outcomes. Inspect actual outcomes.
    Record incomplete or blocked cases honestly; do not simulate generator logic
    in Python and call that end-to-end validation.
 3. Confirm intended release version. Keep the manifest at the candidate version,
    then move the Unreleased changelog into a dated release only at release time.
 4. Create/push the tag and release through the maintainer's normal release flow.
-   The current repair does not create tags, push, or publish.
+   The maintainer authorized this release on 2026-10-09.
 5. Download and test the actual hosted archive with `specify preset add --from`,
    inspect `preset info`, all six `preset resolve` results, agent outputs, and
    `preset remove` in a disposable project. The local ZIP test is not this step.
-6. Replace README's historical v1.0.2 archive example with the exact verified
-   v1.1.0 download URL; ensure it matches the catalog `download_url`.
-7. Update the existing entry in `presets/catalog.community.json` and its row in
-   `docs/community/presets.md` through an upstream PR. Preserve creation date,
-   update modification date, and use five commands/one template. Keep catalog
-   entries ordered by ID and the docs table ordered by display name.
+6. Keep README's v1.1.0 download URL identical to the actual release asset and
+   catalog `download_url`; record verification after publication.
+7. Open the upstream Preset Submission issue for the existing entry's version
+   update. Per `CONTRIBUTING.md`, new entries, updates and repairs all use this
+   issue flow; do not submit a hand-edited catalog PR. The maintainer applies
+   `preset-submission` during triage; automation validates the release and
+   generates the catalog/docs PR. Await maintainer review and merge.
 
-## Prepared catalog update
+## Catalog submission material
 
 [catalog-entry.v1.1.0.json](catalog-entry.v1.1.0.json) is a draft replacement for
 the existing entry, not a submitted or published catalog. It uses the candidate
@@ -83,4 +84,5 @@ pushed. The workflow tests the downloaded archive in a disposable project.
 Current hosted CI: [three jobs passed](https://github.com/philo-x/spec-kit-preset-codebase-memory-context/actions/runs/37905447930).
 The [completion record](validation/completion.md) lists the candidate validation
 branch and release boundary. [catalog-update.v1.1.0.patch](catalog-update.v1.1.0.patch)
-is the verified two-file upstream update, dependent on the clean asset publication.
+is historical preparation only. It must not be submitted as a hand-edited PR;
+use the Preset Submission issue flow described above.

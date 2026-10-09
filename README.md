@@ -33,8 +33,8 @@ itself and the development tests have their own Python dependencies.
 
 ## Installation
 
-The working tree targets v1.1.0. Until that version has a published, verified
-archive, build a clean distribution from the current checkout and install it locally:
+For development, build a clean distribution from the current checkout and
+install it locally:
 
 ```bash
 # Run in the preset checkout; use a fresh output directory on subsequent builds.
@@ -53,15 +53,15 @@ repository; unreleased evidence becomes available there after publication.
 An existing installation can be removed and reinstalled from the clean directory;
 keep `.specify/memory/codebase.md` and feature documents in place.
 
-For the historical v1.0.2 release (with its older generator behavior):
+For the v1.1.0 release, install the clean ZIP asset:
 
 ```bash
-specify preset add --from https://github.com/philo-x/spec-kit-preset-codebase-memory-context/archive/refs/tags/v1.0.2.zip
+specify preset add --from https://github.com/philo-x/spec-kit-preset-codebase-memory-context/releases/download/v1.1.0/codebase-memory-context.zip
 ```
 
-Do not use that older archive to evaluate the current tool-neutral contract.
-The v1.1.0 download command will replace this release example only after its
-archive is available and archive installation has been verified.
+Use the release asset rather than the GitHub source archive, which also includes
+historical validation logs. Hosted download and installation results are recorded
+in the publishing checklist after the release completes.
 
 Verify the generator, output template, and consumer commands:
 

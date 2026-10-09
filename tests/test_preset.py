@@ -55,7 +55,7 @@ def test_manifest_and_documentation_contract():
     for heading in ("## When to Use It", "## When Not to Use It", "## Development and Validation"):
         assert heading in readme
     assert "specify preset add --dev" in readme
-    assert "archive/refs/tags/v1.0.2.zip" in readme
+    assert f"releases/download/v{manifest.version}/codebase-memory-context.zip" in readme
     assert "optional" in readme.lower()
     assert (PRESET_DIR / "LICENSE").is_file()
     assert "Copyright GitHub, Inc." in (PRESET_DIR / "THIRD_PARTY_NOTICES.md").read_text()
