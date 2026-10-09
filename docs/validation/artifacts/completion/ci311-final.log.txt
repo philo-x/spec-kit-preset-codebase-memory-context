@@ -1,0 +1,11 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.15, pytest-9.1.1, pluggy-1.6.0
+rootdir: /Users/xuuyin/Documents/spec-kit/spec-kit-preset-codebase-memory-context
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.15.1
+collected 25 items / 2 deselected / 23 selected
+
+tests/test_preset.py .......................                             [100%]
+
+====================== 23 passed, 2 deselected in 22.57s =======================

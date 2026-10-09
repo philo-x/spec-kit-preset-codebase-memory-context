@@ -1,0 +1,68 @@
+{
+  "overrides-unchanged": {
+    "sha256": "4c6d37030a46b14c00e60ba62587183cb6fe2dd4246006292190f1eaae223abe",
+    "mtime_ns": 1791531464030033826,
+    "retained_preflight_bytes": true,
+    "symlink": false
+  },
+  "unowned": {
+    "sha256": "4d104fe03e111584e69cb45fed3ccf94f45af1b22f133417afff0430b57e311d",
+    "mtime_ns": 1791531465060587459,
+    "retained_preflight_bytes": true,
+    "symlink": false
+  },
+  "malformed": {
+    "sha256": "14dc77fe52881354b3f133043f78abec5989c410d7a20faa216b65f8336b002e",
+    "mtime_ns": 1791531466195217189,
+    "retained_preflight_bytes": true,
+    "symlink": false
+  },
+  "target-symlink": {
+    "sha256": null,
+    "mtime_ns": 1791531467256572585,
+    "retained_preflight_bytes": true,
+    "symlink": true
+  },
+  "concurrent": {
+    "sha256": "7f0caadda57b6c299f0fbd2b7515528706ac3900ff5e69e6f88fdf6c37c20a5c",
+    "mtime_ns": 1791531512329097136,
+    "retained_preflight_bytes": false,
+    "symlink": false
+  },
+  "secret-overrides": {
+    "sha256": "cc3c6c2cf698937b2c96de09b5bf316b9bca33736770555cf26b6427abd1eaa6",
+    "mtime_ns": 1791531469461759024,
+    "retained_preflight_bytes": true,
+    "symlink": false
+  },
+  "mandatory-before": {
+    "sha256": "55fe7ccc87f1c095f7be47ddba138f2e3f71003c08d9b260587003dbc7a47ed6",
+    "mtime_ns": 1791531396769152901,
+    "retained_preflight_bytes": true,
+    "symlink": false
+  },
+  "post-failure": {
+    "sha256": "4c6d37030a46b14c00e60ba62587183cb6fe2dd4246006292190f1eaae223abe",
+    "mtime_ns": 1791531471596317956,
+    "retained_preflight_bytes": true,
+    "symlink": false
+  },
+  "unsupported-condition": {
+    "sha256": "55fe7ccc87f1c095f7be47ddba138f2e3f71003c08d9b260587003dbc7a47ed6",
+    "mtime_ns": 1791531396769152901,
+    "retained_preflight_bytes": true,
+    "symlink": false
+  },
+  "unsafe-reentry": {
+    "sha256": "55fe7ccc87f1c095f7be47ddba138f2e3f71003c08d9b260587003dbc7a47ed6",
+    "mtime_ns": 1791531396769152901,
+    "retained_preflight_bytes": true,
+    "symlink": false
+  },
+  "refresh-source-change": {
+    "sha256": "4c6d37030a46b14c00e60ba62587183cb6fe2dd4246006292190f1eaae223abe",
+    "mtime_ns": 1791531474938315495,
+    "retained_preflight_bytes": true,
+    "symlink": false
+  }
+}

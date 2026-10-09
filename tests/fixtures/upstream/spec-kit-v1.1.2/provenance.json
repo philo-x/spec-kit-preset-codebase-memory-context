@@ -1,0 +1,12 @@
+{
+  "version": "1.1.2",
+  "source": "https://github.com/github/spec-kit/tree/v1.1.2/templates/commands",
+  "files": {
+    "plan.md": "206a0386d20b3eed4c087a4d9de247a3e7b2b59348bf3c801fc74f63ca2726a5",
+    "tasks.md": "2f9176c6e7c23d2a83d2bd018ffa1e67aee977389a57f2a3fe35fe987b425944",
+    "analyze.md": "ffe0640ebe778795737937f2d4ec6f0149d7d55b72692e25369a668f985d1dfe",
+    "implement.md": "feab334232940cfd4ecbcdae41cf63ccb7d581a60380230837385f296f7b49bd"
+  },
+  "license": "MIT",
+  "license_notice": "THIRD_PARTY_NOTICES.md"
+}

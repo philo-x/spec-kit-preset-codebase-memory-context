@@ -1,0 +1,63 @@
+{
+  "creation": {
+    "outcome": "Created",
+    "method": "same-directory fsynced candidate; os.link no-clobber; candidate removed",
+    "source_files_unchanged": 132
+  },
+  "overrides-unchanged": {
+    "outcome": "Unchanged",
+    "override_bytes": 332,
+    "override_sha256": "5bdcdc5ecac037c2afd301dfe7fc2602d22b025c0c0215dbdaa14471d6f9986b",
+    "mtime_preserved": true
+  },
+  "unowned": {
+    "outcome": "Halted",
+    "reason": "no ownership marker; no replace flag"
+  },
+  "malformed": {
+    "outcome": "Halted",
+    "reason": "manual override boundary missing"
+  },
+  "target-symlink": {
+    "outcome": "Halted",
+    "reason": "lstat rejects symlink without reading target"
+  },
+  "secret-overrides": {
+    "outcome": "Halted",
+    "reason": "synthetic credential-key pattern detected; value not included in artifacts"
+  },
+  "concurrent": {
+    "outcome": "Halted",
+    "reason": "real fixture writer changed content after preflight; agent retained changed file"
+  },
+  "creation-race": {
+    "outcome": "Halted",
+    "reason": "real fixture writer created target; os.link raised FileExistsError; existing file retained"
+  },
+  "mandatory-before": {
+    "outcome": "Unchanged",
+    "hook": "field-readonly-hook",
+    "executed": true,
+    "exit_code": 0
+  },
+  "post-failure": {
+    "outcome": "Unchanged",
+    "lifecycle": "incomplete",
+    "hook_executed": true,
+    "hook_exit_code": 1,
+    "bytes_and_mtime_preserved": true
+  },
+  "unsupported-condition": {
+    "outcome": "Halted",
+    "reason": "mandatory hook condition has no compatible evaluator; pending"
+  },
+  "unsafe-reentry": {
+    "outcome": "Halted",
+    "reason": "recursive generator hook rejected"
+  },
+  "refresh-source-change": {
+    "outcome": "Halted",
+    "reason": "README fixture changed, but no guarded atomic replacement primitive available; original retained",
+    "limitation": "No successful Refreshed outcome or changed-body override preservation established"
+  }
+}

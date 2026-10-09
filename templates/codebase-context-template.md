@@ -62,18 +62,20 @@ evidence_tier: "verify"
 
 ### Validation Commands
 
-| Purpose | Command | Preconditions | Evidence |
-|---|---|---|---|
-| [Build / Test / Lint / Run / Package / Deploy] | `[Repository-declared command]` | [Required profile, runtime, or env] | [Config, CI, wrapper, or README path] |
+| Purpose | Command | Working Directory | Preconditions | Evidence | Execution Status |
+|---|---|---|---|---|---|
+| [Build / Test / Lint / Run / Package / Deploy] | `[Repository-declared command]` | [Repository-relative directory] | [Required profile, runtime, or env] | [Config, CI, wrapper, or README path] | Not executed (discovered only) |
 
 ## 5. Evidence and Coverage Limitations
 
 [Record verified bounded scopes, excluded or inaccessible paths, unverified external dependencies, and any conclusion that remains inferred or unknown. If a code graph backend was used, record the graph project and index coverage status; otherwise, record the direct file inspection and search scopes.]
 
-<!-- PROJECT OVERRIDES START -->
 ## 6. Project Overrides
 
-> Human-maintained and preserved verbatim. The generator does not validate this
-> section or use it to raise the confidence of generated findings.
+<!-- PROJECT OVERRIDES START -->
+
+> Human-maintained and preserved verbatim on normal refresh. The generator checks
+> ownership, marker structure, and secret safety, but does not verify these notes
+> as repository facts or use them to raise confidence in generated findings.
 
 <!-- PROJECT OVERRIDES END -->

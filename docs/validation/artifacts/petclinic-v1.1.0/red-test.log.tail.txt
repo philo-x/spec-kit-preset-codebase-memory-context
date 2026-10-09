@@ -1,0 +1,65 @@
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/pydantic/networks.py:[618,32] (extension) NoHttp: http:// URLs are not allowed but got 'http://samuel:pass@example.com:8000/the/path/?query=here'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/pydantic/networks.py:[698,9] (extension) NoHttp: http:// URLs are not allowed but got 'http://xn--punycode-eja.com/'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/pydantic/networks.py:[720,66] (extension) NoHttp: http:// URLs are not allowed but got 'http://exam_ple.com'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/readchar/_posix_read.py:[8,4] (extension) NoHttp: http:// URLs are not allowed but got 'http://code.activestate.com/recipes/134892/'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpcore2/_async/__pycache__/connection_pool.cpython-314.pyc:[105,29] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com:80'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpcore2/_async/connection_pool.py:[185,37] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com:80'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpcore2/_sync/__pycache__/connection_pool.cpython-314.pyc:[103,24] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com:80'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpcore2/_sync/connection_pool.py:[185,32] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com:80'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_urls.py:[56,26] (extension) NoHttp: http:// URLs are not allowed but got 'http://xn--fiqs8s.icom.museum'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_urls.py:[63,26] (extension) NoHttp: http:// URLs are not allowed but got 'http://xn--fiqs8s.icom.museum'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_urls.py:[70,27] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_urls.py:[70,63] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com:80'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_urls.py:[71,27] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_urls.py:[72,27] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com:80'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_urls.py:[182,28] (extension) NoHttp: http:// URLs are not allowed but got 'http://www.EXAMPLE.org'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_urls.py:[188,28] (extension) NoHttp: http:// URLs are not allowed but got 'http://xn--fiqs8s.icom.museum'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_urls.py:[209,28] (extension) NoHttp: http:// URLs are not allowed but got 'http://www.EXAMPLE.org'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_urls.py:[215,28] (extension) NoHttp: http:// URLs are not allowed but got 'http://xn--fiqs8s.icom.museum'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_urls.py:[316,51] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com/path'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_urls.py:[328,52] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com/path'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_urls.cpython-314.pyc:[45,22] (extension) NoHttp: http:// URLs are not allowed but got 'http://xn--fiqs8s.icom.museum'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_urls.cpython-314.pyc:[52,22] (extension) NoHttp: http:// URLs are not allowed but got 'http://xn--fiqs8s.icom.museum'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_urls.cpython-314.pyc:[59,23] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_urls.cpython-314.pyc:[59,59] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com:80'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_urls.cpython-314.pyc:[60,23] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_urls.cpython-314.pyc:[61,23] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com:80'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_urls.cpython-314.pyc:[122,20] (extension) NoHttp: http:// URLs are not allowed but got 'http://www.EXAMPLE.org'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_urls.cpython-314.pyc:[128,20] (extension) NoHttp: http:// URLs are not allowed but got 'http://xn--fiqs8s.icom.museum'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_urls.cpython-314.pyc:[140,20] (extension) NoHttp: http:// URLs are not allowed but got 'http://www.EXAMPLE.org'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_urls.cpython-314.pyc:[146,20] (extension) NoHttp: http:// URLs are not allowed but got 'http://xn--fiqs8s.icom.museum'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_urls.cpython-314.pyc:[220,43] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com/path'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_urls.cpython-314.pyc:[224,44] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com/path'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_models.cpython-314.pyc:[31,52] (extension) NoHttp: http:// URLs are not allowed but got 'http://.../back.jpeg'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_models.cpython-314.pyc:[35,19] (extension) NoHttp: http:// URLs are not allowed but got 'http://.../back.jpeg'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_utils.cpython-314.pyc:[66,34] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_utils.cpython-314.pyc:[73,34] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_utils.cpython-314.pyc:[80,34] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/__pycache__/_utils.cpython-314.pyc:[89,34] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_client.py:[514,50] (extension) NoHttp: http:// URLs are not allowed but got 'http://domain.tld/path/to/resource'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_models.py:[102,56] (extension) NoHttp: http:// URLs are not allowed but got 'http://.../back.jpeg'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_models.py:[106,23] (extension) NoHttp: http:// URLs are not allowed but got 'http://.../back.jpeg'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_utils.py:[136,38] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_utils.py:[143,38] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_utils.py:[150,38] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/httpx2/_utils.py:[159,38] (extension) NoHttp: http:// URLs are not allowed but got 'http://example.com'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/json5-0.16.0.dist-info/licenses/LICENSE:[5,26] (extension) NoHttp: http:// URLs are not allowed but got 'http://www.apache.org/licenses/'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/json5-0.16.0.dist-info/licenses/LICENSE:[197,9] (extension) NoHttp: http:// URLs are not allowed but got 'http://www.apache.org/licenses/LICENSE-2.0'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/json5-0.16.0.dist-info/METADATA:[10,34] (extension) NoHttp: http:// URLs are not allowed but got 'http://www.apache.org/licenses/'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/json5-0.16.0.dist-info/METADATA:[202,17] (extension) NoHttp: http:// URLs are not allowed but got 'http://www.apache.org/licenses/LICENSE-2.0'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/json5-0.16.0.dist-info/METADATA:[313,9] (extension) NoHttp: http:// URLs are not allowed but got 'http://www.json.org'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/_pytest/assertion/__pycache__/rewrite.cpython-314.pyc:[251,2] (extension) NoHttp: http:// URLs are not allowed but got 'http://pybites.blogspot.be/2011/07/behind-scenes-of-pytests-new-assertion.html'. Use https:// instead.
+[ERROR] .specify/presets/codebase-memory-context/.venv/lib/python3.14/site-packages/_pytest/assertion/rewrite.py:[612,6] (extension) NoHttp: http:// URLs are not allowed but got 'http://pybites.blogspot.be/2011/07/behind-scenes-of-pytests-new-assertion.html'. Use https:// instead.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:47 min
+[INFO] Finished at: 2026-10-09T15:44:05+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-checkstyle-plugin:3.6.0:check (nohttp-checkstyle-validation) on project spring-petclinic: You have 790 Checkstyle violations. -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

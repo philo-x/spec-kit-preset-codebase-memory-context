@@ -1,0 +1,27 @@
+{
+  "name": "Verified Codebase Context",
+  "id": "codebase-memory-context",
+  "version": "1.1.0",
+  "description": "Generate evidence-qualified repository context and use it across planning, tasks, analysis, and implementation",
+  "author": "Xu Yin (philo-x)",
+  "repository": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context",
+  "license": "MIT",
+  "download_url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/releases/download/v1.1.0/codebase-memory-context.zip",
+  "homepage": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context",
+  "documentation": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/blob/v1.1.0/README.md",
+  "requires": {
+    "speckit_version": ">=1.1.2"
+  },
+  "provides": {
+    "templates": 1,
+    "commands": 5
+  },
+  "tags": [
+    "code-intelligence",
+    "codebase-memory",
+    "architecture",
+    "workflow"
+  ],
+  "created_at": "2026-08-26T00:00:00Z",
+  "updated_at": "2026-10-09T00:00:00Z"
+}

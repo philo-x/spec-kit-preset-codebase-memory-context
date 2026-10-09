@@ -1,2 +1,2 @@
-specify-cli>=1.1.2,<2
+specify-cli==1.1.2
 pytest>=8,<10

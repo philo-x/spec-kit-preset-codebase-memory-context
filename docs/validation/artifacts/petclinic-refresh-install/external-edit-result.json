@@ -1,0 +1,7 @@
+{
+  "outcome": "Halted",
+  "changed_after_preflight": true,
+  "external_bytes_retained": true,
+  "current_sha256": "e6a11fa4aeb480766b8526b93e71c9cf9a6306fa8639af83fd4dd63a3f6cb5c9",
+  "lock_cleaned": true
+}

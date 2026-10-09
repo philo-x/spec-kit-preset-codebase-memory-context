@@ -1,0 +1,277 @@
+{
+  "scope": "active-agent isolated hook-phase checks; not 26 full generator runs",
+  "authorization": "optional-authorized read-only fixture explicitly authorized as part of requested matrix",
+  "rows": [
+    {
+      "phase": "before_codebase_memory",
+      "case": "missing-event",
+      "decision": "none",
+      "configuration_parsed": true,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "before_codebase_memory",
+      "case": "disabled",
+      "decision": "skipped",
+      "configuration_parsed": true,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "before_codebase_memory",
+      "case": "true",
+      "decision": "success",
+      "configuration_parsed": true,
+      "executed": true,
+      "exit_code": 0,
+      "stdout": "Read-only hook passed\n",
+      "stderr": "",
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "before_codebase_memory",
+      "case": "false",
+      "decision": "skipped",
+      "configuration_parsed": true,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "before_codebase_memory",
+      "case": "null",
+      "decision": "success",
+      "configuration_parsed": true,
+      "executed": true,
+      "exit_code": 0,
+      "stdout": "Read-only hook passed\n",
+      "stderr": "",
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "before_codebase_memory",
+      "case": "empty",
+      "decision": "success",
+      "configuration_parsed": true,
+      "executed": true,
+      "exit_code": 0,
+      "stdout": "Read-only hook passed\n",
+      "stderr": "",
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "before_codebase_memory",
+      "case": "unsupported",
+      "decision": "pending",
+      "configuration_parsed": true,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "blocked before write"
+    },
+    {
+      "phase": "before_codebase_memory",
+      "case": "optional-default",
+      "decision": "not authorized",
+      "configuration_parsed": true,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "before_codebase_memory",
+      "case": "optional-authorized",
+      "decision": "success",
+      "configuration_parsed": true,
+      "executed": true,
+      "exit_code": 0,
+      "stdout": "Read-only hook passed\n",
+      "stderr": "",
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "before_codebase_memory",
+      "case": "mandatory-failure",
+      "decision": "failed",
+      "configuration_parsed": true,
+      "executed": true,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    raise RuntimeError('Intentional read-only failure')\nRuntimeError: Intentional read-only failure\n",
+      "target_retained": true,
+      "lifecycle": "blocked before write"
+    },
+    {
+      "phase": "before_codebase_memory",
+      "case": "unavailable",
+      "decision": "pending",
+      "configuration_parsed": true,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "blocked before write"
+    },
+    {
+      "phase": "before_codebase_memory",
+      "case": "unsafe",
+      "decision": "blocked",
+      "configuration_parsed": true,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "blocked before write"
+    },
+    {
+      "phase": "before_codebase_memory",
+      "case": "invalid",
+      "decision": "not checked",
+      "configuration_parsed": false,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "unverified"
+    },
+    {
+      "phase": "after_codebase_memory",
+      "case": "missing-event",
+      "decision": "none",
+      "configuration_parsed": true,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "after_codebase_memory",
+      "case": "disabled",
+      "decision": "skipped",
+      "configuration_parsed": true,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "after_codebase_memory",
+      "case": "true",
+      "decision": "success",
+      "configuration_parsed": true,
+      "executed": true,
+      "exit_code": 0,
+      "stdout": "Read-only hook passed\n",
+      "stderr": "",
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "after_codebase_memory",
+      "case": "false",
+      "decision": "skipped",
+      "configuration_parsed": true,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "after_codebase_memory",
+      "case": "null",
+      "decision": "success",
+      "configuration_parsed": true,
+      "executed": true,
+      "exit_code": 0,
+      "stdout": "Read-only hook passed\n",
+      "stderr": "",
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "after_codebase_memory",
+      "case": "empty",
+      "decision": "success",
+      "configuration_parsed": true,
+      "executed": true,
+      "exit_code": 0,
+      "stdout": "Read-only hook passed\n",
+      "stderr": "",
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "after_codebase_memory",
+      "case": "unsupported",
+      "decision": "pending",
+      "configuration_parsed": true,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "incomplete after commit"
+    },
+    {
+      "phase": "after_codebase_memory",
+      "case": "optional-default",
+      "decision": "not authorized",
+      "configuration_parsed": true,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "after_codebase_memory",
+      "case": "optional-authorized",
+      "decision": "success",
+      "configuration_parsed": true,
+      "executed": true,
+      "exit_code": 0,
+      "stdout": "Read-only hook passed\n",
+      "stderr": "",
+      "target_retained": true,
+      "lifecycle": "eligible/valid skip"
+    },
+    {
+      "phase": "after_codebase_memory",
+      "case": "mandatory-failure",
+      "decision": "failed",
+      "configuration_parsed": true,
+      "executed": true,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    raise RuntimeError('Intentional read-only failure')\nRuntimeError: Intentional read-only failure\n",
+      "target_retained": true,
+      "lifecycle": "incomplete after commit"
+    },
+    {
+      "phase": "after_codebase_memory",
+      "case": "unavailable",
+      "decision": "pending",
+      "configuration_parsed": true,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "incomplete after commit"
+    },
+    {
+      "phase": "after_codebase_memory",
+      "case": "unsafe",
+      "decision": "blocked",
+      "configuration_parsed": true,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "incomplete after commit"
+    },
+    {
+      "phase": "after_codebase_memory",
+      "case": "invalid",
+      "decision": "not checked",
+      "configuration_parsed": false,
+      "executed": false,
+      "target_retained": true,
+      "lifecycle": "unverified"
+    }
+  ],
+  "priority_execution": [
+    "first",
+    "second",
+    "default-invalid",
+    "third"
+  ],
+  "target_unchanged": true
+}

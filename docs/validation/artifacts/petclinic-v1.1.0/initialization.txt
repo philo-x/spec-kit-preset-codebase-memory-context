@@ -1,0 +1,75 @@
+              ███████╗██████╗ ███████╗ ██████╗██╗███████╗██╗   ██╗              
+              ██╔════╝██╔══██╗██╔════╝██╔════╝██║██╔════╝╚██╗ ██╔╝              
+              ███████╗██████╔╝█████╗  ██║     ██║█████╗   ╚████╔╝               
+              ╚════██║██╔═══╝ ██╔══╝  ██║     ██║██╔══╝    ╚██╔╝                
+              ███████║██║     ███████╗╚██████╗██║██║        ██║                 
+              ╚══════╝╚═╝     ╚══════╝ ╚═════╝╚═╝╚═╝        ╚═╝                 
+                                                                                
+               GitHub Spec Kit - Spec-Driven Development Toolkit                
+
+Warning: Current directory is not empty (21 items)
+Template files will be merged with existing content and may overwrite existing 
+files
+--force supplied: skipping confirmation and proceeding with merge
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  Specify Project Setup                                                       │
+│                                                                              │
+│  Project         petclinic                                                   │
+│  Working Path                                                                │
+│  /private/tmp/preset-petclinic-validation-20261009/petclinic                 │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Selected coding agent integration: codex
+Selected script type: py
+Initialize Specify Project
+├── ● Check required tools (ok)
+├── ● Select coding agent integration (codex)
+├── ● Select script type (py)
+├── ● Install integration (Codex CLI)
+├── ● Install shared infrastructure (scripts (py) + templates)
+├── ● Ensure scripts executable (6 updated)
+├── ● Constitution setup (copied from template)
+├── ● Install bundled workflow (speckit installed)
+└── ● Finalize (project ready)
+
+Project ready.
+
+╭─────────────────────────── Agent Folder Security ────────────────────────────╮
+│                                                                              │
+│  Some agents may store credentials, auth tokens, or other identifying and    │
+│  private artifacts in the agent folder within your project.                  │
+│  Consider adding .agents/ (or parts of it) to .gitignore to prevent          │
+│  accidental credential leakage.                                              │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────────── Next Steps ─────────────────────────────────╮
+│                                                                              │
+│  1. You're already in the project directory!                                 │
+│  2. Start Codex in this project directory; spec-kit skills were installed    │
+│  to .agents/skills                                                           │
+│  3. Start using skills with your coding agent:                               │
+│     3.1 $speckit-constitution - Establish project principles                 │
+│     3.2 $speckit-specify - Create baseline specification                     │
+│     3.3 $speckit-plan - Create implementation plan                           │
+│     3.4 $speckit-tasks - Generate actionable tasks                           │
+│     3.5 $speckit-implement - Execute implementation                          │
+│     3.6 $speckit-converge - Assess the codebase and append remaining work    │
+│  as tasks                                                                    │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭───────────────────────────── Enhancement Skills ─────────────────────────────╮
+│                                                                              │
+│  Optional skills that you can use for your specs (improve quality &          │
+│  confidence)                                                                 │
+│                                                                              │
+│  ○ $speckit-clarify (optional) - Ask structured questions to de-risk         │
+│  ambiguous areas before planning (run before $speckit-plan if used)          │
+│  ○ $speckit-analyze (optional) - Cross-artifact consistency & alignment      │
+│  report (after $speckit-tasks, before $speckit-implement)                    │
+│  ○ $speckit-checklist (optional) - Generate quality checklists to validate   │
+│  requirements completeness, clarity, and consistency (after $speckit-plan)   │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯

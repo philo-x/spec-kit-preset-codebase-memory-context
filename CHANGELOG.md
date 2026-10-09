@@ -4,51 +4,47 @@ All notable changes to this preset are documented in this file. The format is
 based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and releases
 follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [Unreleased] — targeting 1.1.0
 
 ### Changed
 
-- Compressed `speckit.codebase-memory` command into a concise operational contract (11,993 bytes, 49.06% reduction from 23,544 bytes) to eliminate rule duplication and minimize prompt context overhead while retaining all critical safety constraints.
-- Streamlined lifecycle structure: moved `Evidence Rules` before `Outline`, consolidated analysis and commit into a 4-step execution flow, centralized common hook rules in `Pre-Execution Checks`, and condensed `Done When` into 5 focused verification items.
+- Moved schema 2.0's generated override heading outside the preserved byte region
+  so historical schema 1.0 headings survive migration unchanged.
+- Isolated MCP test runtime directories; added migration/replacement/hook/client/
+  graph evidence and complete Python 3.11/3.13 local matrix results.
+- Prepared tag-triggered clean-asset publishing and downloaded-archive verification;
+  candidate catalog now references the clean asset rather than the source archive.
 
-## [1.1.0] - 2026-10-09
+- Replaced the unavailable refresh compare-and-swap requirement with an exclusive
+  generator lock, final snapshot checks and atomic rename. Documented residual
+  races with external writers that ignore the lock and stale-lock recovery.
+- Added a reproducible clean distribution builder and use its directory for
+  local installation, excluding development environments and validation logs.
+  Added real installation and Petclinic refresh/build follow-up evidence.
+
+- Made repository reading and search the generator baseline, with optional graph
+  discovery and explicit direct-source fallback on missing or failed backends.
+- Rebuilt all four consumers from Spec Kit v1.1.2 with marked context additions;
+  restored the plan Constitution read and retained scripts, handoffs, hooks,
+  placeholders, checklist gates, task rules, and analysis limits.
+- Unified optional-context, source-verification, uncertainty, stale-context, and
+  intentional architecture-change rules across the four consumers.
+- Retained schema 2.0 and the seven-step generation workflow; added command
+  working directories and non-execution status to the output template.
+- Clarified manual Overrides safety checks and evidence ownership.
+- Pinned baseline tests to specify-cli 1.1.2 and expanded installation, archive,
+  rendering, and removal coverage across all commands and script selections.
+- Replaced simulated generator behavior tests with accurately scoped prompt and
+  CLI integration contracts. Optional backend CI now fails on unavailable tools.
+- Retained upstream Spec Kit copyright and MIT terms in third-party notices.
+- Corrected README release status, hook guidance, maintenance instructions, and
+  validation claims. Added upstream provenance and a publishing checklist.
 
 ### Added
 
-- Independent lifecycle hooks for context generation: `before_codebase_memory`
-  and `after_codebase_memory`.
-- Read-only Project Setup Verification preflight checks enforcing repository
-  boundaries, symlink safety, sensitive data isolation, and noise filtering
-  prior to reading or indexing.
-- Concrete behavioral tests covering override preservation, ownership
-  validation, sensitive data isolation, hook failures, and missing-context
-  fallbacks.
-- New validation report for v1.1.0 documenting backend-free execution, protection
-  boundaries, lifecycle hooks, and downstream command consumption.
-
-### Changed
-
-- Aligned baseline with Spec Kit v1.1.2 across all replacement commands
-  (`speckit.plan`, `speckit.tasks`, `speckit.analyze`, and `speckit.implement`).
-- Refactored `speckit.codebase-memory` into a unified lifecycle structure
-  matching native Spec Kit commands (Scope Guard, Pre-Execution Checks,
-  Outline, Mandatory Post-Execution Hooks, Completion Report, Evidence Rules,
-  Done When).
-- Decoupled generator from hard backend prerequisites:
-  - Standard filesystem reading and code search provide the baseline capability.
-  - Code graph tools (MCP or local CLI) act as optional enhancements for symbol
-    navigation and relationship discovery.
-  - Analysis depth is driven by repository applicability and risk rather than
-    forced framework quotas.
-  - Representative traces are selected by value (capped at 5) rather than
-    framework minimums.
-- Removed ignore file modification or creation; absent ignore configurations
-  trigger conservative analysis and recorded limits without modifying the repo.
-- Post-execution hook failures now explicitly distinguish generated file status
-  from incomplete lifecycle validation without unauthorized file rollback.
-- Split CI and dev requirements: `requirements-dev.txt` runs base validation
-  without graph backends, while `requirements-backend.txt` verifies optional
-  backend compatibility.
+- Read-only generation hooks `before_codebase_memory` and `after_codebase_memory`
+  with authorization, re-entry prevention, and separate file/lifecycle outcomes.
+- Read-only generation preflight and owned-document refresh rules.
 
 ## [1.0.2] - 2026-09-03
 
@@ -92,8 +88,7 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Installation and rendering coverage for skills-based and command-based agent
   integrations.
 
-[Unreleased]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/compare/v1.1.0...HEAD
-[1.1.0]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/compare/v1.0.2...v1.1.0
+[Unreleased]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/compare/v1.0.2...HEAD
 [1.0.2]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/releases/tag/v1.0.0

@@ -1,0 +1,8 @@
+{
+  "speckit.codebase-memory": "c48f2f37364a523b08f350c1d79e412e25b4a1c4967202598968ddd0d53a81ba",
+  "speckit.plan": "afab5646b6ee1930b22fbd782e64800239526615b78e1bbca425c9b8df21a5ed",
+  "speckit.tasks": "a6b49d904f2d8c40a9163ceb6f1bb341f0d322bae39600e5c740f864761b34d6",
+  "speckit.analyze": "da6e22f3bc27e78df7089af893305efd2a20e2dc026ccca152be2a3b35bbbd1a",
+  "speckit.implement": "9a992c1402ac755cf440a16638a2c50f42d53effda6b7bdfef06e62e1d888f5a",
+  "codebase-context-template": "4ae1bdac070f8a1f9daa949e1ba1ae60cfbc89fa5b3b3c781e47b746e0d7208c"
+}

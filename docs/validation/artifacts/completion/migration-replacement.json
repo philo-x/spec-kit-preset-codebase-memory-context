@@ -1,0 +1,20 @@
+{
+  "migration": {
+    "outcome": "Refreshed",
+    "before_sha256": "47ee84b15af536945730e2f7a0c89647c8fbbb1bf6fcc6eae976e57e1e4b391b",
+    "after_sha256": "3da09bb75cfe1cfdd2a4fe396f840adff1a4c666f2c545f4505bad96a0e93fdd",
+    "manual_preserved": true,
+    "hooks": "none",
+    "old_owned": true,
+    "source": "current Petclinic source copies; commit identity explicitly unknown in fixture"
+  },
+  "replace": {
+    "outcome": "Replaced",
+    "before_sha256": "78928846e071b1562a045d2490469521a5bb6d7ee11597dcf2674ae24e7090e9",
+    "after_sha256": "4daaa59d8b804ebe15ac8b585ef7d56a9e7cc90f978d4e93fa493962eec7fb2f",
+    "manual_preserved": false,
+    "hooks": "none",
+    "old_owned": false,
+    "source": "current Petclinic source copies; commit identity explicitly unknown in fixture"
+  }
+}

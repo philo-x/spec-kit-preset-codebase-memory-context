@@ -1,0 +1,9 @@
+{
+  "outcome": "Refreshed",
+  "override_bytes_preserved": true,
+  "override_sha256": "3590c02b313780976cffa804665b10a4e27e9773c91e1f6d6ef18bf728a1635c",
+  "source_unchanged_during_generator": true,
+  "hooks": "none configured",
+  "sha256": "962c4c9184effa273da2614f8954507eb5e3e87b75fd028ef96298b334eb66c6",
+  "residual_race": "External writers that do not honor the lock can race the final check and rename; no universal compare-and-swap guarantee"
+}

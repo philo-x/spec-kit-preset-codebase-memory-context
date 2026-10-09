@@ -1,0 +1,180 @@
+{
+  "red": {
+    "tests": 9,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 0,
+    "cases": [
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests",
+        "name": "supportsPetClass",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests",
+        "name": "validate",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests",
+        "name": "rejectsFutureBirthDateWithExistingErrorCode",
+        "status": "failed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests",
+        "name": "acceptsTodaysBirthDate",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests",
+        "name": "doesNotSupportNonPetClass",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests$ValidateHasErrors",
+        "name": "validateWithLongPetName",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests$ValidateHasErrors",
+        "name": "validateWithInvalidPetName",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests$ValidateHasErrors",
+        "name": "validateWithInvalidPetType",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests$ValidateHasErrors",
+        "name": "validateWithInvalidBirthDate",
+        "status": "passed"
+      }
+    ],
+    "exit_code": 1
+  },
+  "green": {
+    "tests": 23,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "cases": [
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetControllerTests",
+        "name": "processUpdateFormSuccess",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetControllerTests",
+        "name": "processUpdateFormWithSameName",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetControllerTests",
+        "name": "processCreationFormSuccess",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetControllerTests",
+        "name": "initCreationForm",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessUpdateFormHasErrors",
+        "name": "processUpdateFormWithDuplicateName",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessUpdateFormHasErrors",
+        "name": "processUpdateFormWithDataIntegrityViolation",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessUpdateFormHasErrors",
+        "name": "processUpdateFormWithBlankName",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessUpdateFormHasErrors",
+        "name": "processUpdateFormWithInvalidBirthDate",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessCreationFormHasErrors",
+        "name": "processCreationFormWithMissingPetType",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessCreationFormHasErrors",
+        "name": "processCreationFormWithBlankName",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessCreationFormHasErrors",
+        "name": "processCreationFormWithDataIntegrityViolation",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessCreationFormHasErrors",
+        "name": "processCreationFormWithInvalidBirthDate",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessCreationFormHasErrors",
+        "name": "initUpdateForm",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessCreationFormHasErrors",
+        "name": "processCreationFormWithDuplicateName",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests",
+        "name": "supportsPetClass",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests",
+        "name": "validate",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests",
+        "name": "rejectsFutureBirthDateWithExistingErrorCode",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests",
+        "name": "acceptsTodaysBirthDate",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests",
+        "name": "doesNotSupportNonPetClass",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests$ValidateHasErrors",
+        "name": "validateWithLongPetName",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests$ValidateHasErrors",
+        "name": "validateWithInvalidPetName",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests$ValidateHasErrors",
+        "name": "validateWithInvalidPetType",
+        "status": "passed"
+      },
+      {
+        "class": "org.springframework.samples.petclinic.owner.PetValidatorTests$ValidateHasErrors",
+        "name": "validateWithInvalidBirthDate",
+        "status": "passed"
+      }
+    ],
+    "exit_code": 0
+  }
+}

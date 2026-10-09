@@ -51,4 +51,6 @@ jobs:
           python -m pip show codebase-memory-mcp
           codebase-memory-mcp --version
       - name: Run backend contract tests
+        env:
+          PRESET_REQUIRE_BACKEND: "1"
         run: python -m pytest -m "backend"

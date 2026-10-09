@@ -1,0 +1,46 @@
+{
+  "overrides-unchanged": {
+    "initial_target_sha256": "4c6d37030a46b14c00e60ba62587183cb6fe2dd4246006292190f1eaae223abe",
+    "initial_mtime": 1791531464030033826
+  },
+  "unowned": {
+    "initial_target_sha256": "4d104fe03e111584e69cb45fed3ccf94f45af1b22f133417afff0430b57e311d",
+    "initial_mtime": 1791531465060587459
+  },
+  "malformed": {
+    "initial_target_sha256": "14dc77fe52881354b3f133043f78abec5989c410d7a20faa216b65f8336b002e",
+    "initial_mtime": 1791531466195217189
+  },
+  "target-symlink": {
+    "initial_target_sha256": null,
+    "initial_mtime": 1791531467256572585
+  },
+  "concurrent": {
+    "initial_target_sha256": "55fe7ccc87f1c095f7be47ddba138f2e3f71003c08d9b260587003dbc7a47ed6",
+    "initial_mtime": 1791531396769152901
+  },
+  "secret-overrides": {
+    "initial_target_sha256": "cc3c6c2cf698937b2c96de09b5bf316b9bca33736770555cf26b6427abd1eaa6",
+    "initial_mtime": 1791531469461759024
+  },
+  "mandatory-before": {
+    "initial_target_sha256": "55fe7ccc87f1c095f7be47ddba138f2e3f71003c08d9b260587003dbc7a47ed6",
+    "initial_mtime": 1791531396769152901
+  },
+  "post-failure": {
+    "initial_target_sha256": "4c6d37030a46b14c00e60ba62587183cb6fe2dd4246006292190f1eaae223abe",
+    "initial_mtime": 1791531471596317956
+  },
+  "unsupported-condition": {
+    "initial_target_sha256": "55fe7ccc87f1c095f7be47ddba138f2e3f71003c08d9b260587003dbc7a47ed6",
+    "initial_mtime": 1791531396769152901
+  },
+  "unsafe-reentry": {
+    "initial_target_sha256": "55fe7ccc87f1c095f7be47ddba138f2e3f71003c08d9b260587003dbc7a47ed6",
+    "initial_mtime": 1791531396769152901
+  },
+  "refresh-source-change": {
+    "initial_target_sha256": "4c6d37030a46b14c00e60ba62587183cb6fe2dd4246006292190f1eaae223abe",
+    "initial_mtime": 1791531474938315495
+  }
+}

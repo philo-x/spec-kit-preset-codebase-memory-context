@@ -1,0 +1,36 @@
+{
+  "completed": true,
+  "events": [
+    {
+      "type": "item.completed",
+      "item": {
+        "type": "agent_message",
+        "text": "I\u2019ll discover the installed skill and read its instructions, using only read-only local tools."
+      }
+    },
+    {
+      "type": "item.started",
+      "item": {
+        "type": "command_execution",
+        "command": "/bin/zsh -c 'cat .agents/skills/speckit-codebase-memory/SKILL.md'",
+        "exit_code": null
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "type": "command_execution",
+        "command": "/bin/zsh -c 'cat .agents/skills/speckit-codebase-memory/SKILL.md'",
+        "exit_code": 0
+      }
+    },
+    {
+      "type": "item.completed",
+      "item": {
+        "type": "agent_message",
+        "text": "Discovered through the native available-skills catalog and read its local `SKILL.md`.\n\n- **Name:** `speckit-codebase-memory`\n- **Path:** [SKILL.md](/private/tmp/preset-petclinic-validation-20261009/petclinic/.agents/skills/speckit-codebase-memory/SKILL.md)\n- **Schema:** Outputs `.specify/memory/codebase.md` using the preset\u2019s six-section schema **2.0** template. Normal refresh accepts generator `speckit.codebase-memory` and schema **1.0 or 2.0**, upgrades 1.0, and preserves bytes between the Project Overrides markers.\n- **Locking:** Exclusively creates `.specify/.codebase-memory.lock` before reading the target or running hooks. Existing locks halt execution; no stealing. Holds the owned lock through after-hooks, checks target bytes and identity before atomic publication, and cleans up only its own lock and temporary files.\n- **Graph policy:** Structural/graph tools are optional discovery aids. Missing tools permit direct-source fallback with disclosed gaps. Backend-specific metrics are unnecessary; a graph and its source are not independent evidence, and static relations do not establish runtime behavior.\n\nNo files changed; no hooks, builds, or network tools ran."
+      }
+    }
+  ],
+  "scope": "fresh CLI read-only discovery; not native-client full generation"
+}

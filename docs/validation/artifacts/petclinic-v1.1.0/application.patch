@@ -1,0 +1,82 @@
+diff --git a/.gitignore b/.gitignore
+index 76cb65f..16ccaf7 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -46,3 +46,12 @@ out/
+ _site/
+ *.css
+ !petclinic.css
++
++### Field implementation setup verification ###
++*.class
++*.jar
++.DS_Store
++Thumbs.db
++*.tmp
++*.swp
++!**/wrapper/*.jar
+diff --git a/src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java b/src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java
+index db847c8..cd0c807 100644
+--- a/src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java
++++ b/src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java
+@@ -15,6 +15,8 @@
+  */
+ package org.springframework.samples.petclinic.owner;
+ 
++import java.time.LocalDate;
++
+ import org.springframework.util.StringUtils;
+ import org.springframework.validation.Errors;
+ import org.springframework.validation.Validator;
+@@ -56,6 +58,9 @@ public class PetValidator implements Validator {
+ 		if (pet.getBirthDate() == null) {
+ 			errors.rejectValue("birthDate", REQUIRED, REQUIRED);
+ 		}
++		else if (pet.getBirthDate().isAfter(LocalDate.now())) {
++			errors.rejectValue("birthDate", "typeMismatch.birthDate");
++		}
+ 	}
+ 
+ 	/**
+diff --git a/src/test/java/org/springframework/samples/petclinic/owner/PetValidatorTests.java b/src/test/java/org/springframework/samples/petclinic/owner/PetValidatorTests.java
+index 43fbad2..f953bcf 100644
+--- a/src/test/java/org/springframework/samples/petclinic/owner/PetValidatorTests.java
++++ b/src/test/java/org/springframework/samples/petclinic/owner/PetValidatorTests.java
+@@ -28,6 +28,7 @@ import org.springframework.validation.MapBindingResult;
+ import java.time.LocalDate;
+ import java.util.HashMap;
+ 
++import static org.junit.jupiter.api.Assertions.assertEquals;
+ import static org.junit.jupiter.api.Assertions.assertFalse;
+ import static org.junit.jupiter.api.Assertions.assertTrue;
+ 
+@@ -84,6 +85,29 @@ class PetValidatorTests {
+ 		assertFalse(errors.hasErrors());
+ 	}
+ 
++	@Test
++	void acceptsTodaysBirthDate() {
++		pet.setName(petName);
++		pet.setType(petType);
++		pet.setBirthDate(LocalDate.now());
++
++		petValidator.validate(pet, errors);
++
++		assertFalse(errors.hasErrors());
++	}
++
++	@Test
++	void rejectsFutureBirthDateWithExistingErrorCode() {
++		pet.setName(petName);
++		pet.setType(petType);
++		pet.setBirthDate(LocalDate.now().plusDays(1));
++
++		petValidator.validate(pet, errors);
++
++		assertTrue(errors.hasFieldErrors("birthDate"));
++		assertEquals("typeMismatch.birthDate", errors.getFieldError("birthDate").getCode());
++	}
++
+ 	@Nested
+ 	class ValidateHasErrors {
+ 

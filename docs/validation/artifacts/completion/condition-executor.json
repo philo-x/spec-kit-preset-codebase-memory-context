@@ -1,0 +1,10 @@
+{
+  "executor": "specify_cli.extensions.HookExecutor._evaluate_condition",
+  "version": "1.1.2",
+  "observed": {
+    "env.PRESET_FIELD_FLAG == 'yes'": true,
+    "env.PRESET_FIELD_FLAG == 'no'": false,
+    "env.PRESET_FIELD_FLAG is set": true
+  },
+  "unknown_rule": "native executor defaults unknown expressions to false; active agent must instead record unsupported as pending"
+}

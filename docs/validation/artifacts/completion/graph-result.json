@@ -1,0 +1,13 @@
+{
+  "outcome": "Refreshed",
+  "project": "petclinic-validation",
+  "mode": "full",
+  "persistence": false,
+  "source_paths_verified": [
+    "src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java",
+    "src/main/java/org/springframework/samples/petclinic/owner/PetController.java",
+    "src/test/java/org/springframework/samples/petclinic/owner/PetValidatorTests.java"
+  ],
+  "override_preserved": true,
+  "limitations": "source-only projection; static graph not runtime; fast-mode samples excluded"
+}

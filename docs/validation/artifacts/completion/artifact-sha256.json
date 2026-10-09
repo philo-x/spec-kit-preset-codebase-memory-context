@@ -1,0 +1,14 @@
+{
+  "condition-executor.json": "73a9d45e23cbb6be6be32045ece9604160f43ce90f8034ff369d2c455afd9ceb",
+  "ci311-final.log.txt": "7aa3bbff4e66c7996e286f08e353959e7e8eb34482877d910f06b2cee4858134",
+  "replace-after.md": "4daaa59d8b804ebe15ac8b585ef7d56a9e7cc90f978d4e93fa493962eec7fb2f",
+  "migration-before.md": "47ee84b15af536945730e2f7a0c89647c8fbbb1bf6fcc6eae976e57e1e4b391b",
+  "migration-after.md": "3da09bb75cfe1cfdd2a4fe396f840adff1a4c666f2c545f4505bad96a0e93fdd",
+  "graph-result.json": "f9f82d88bf50282520226d0375c011809b5e7c04dfe892863048eace90bf7e8b",
+  "graph-enhanced-codebase.md": "ea7f48ac067f0b9904ce76b8adc521e73b1fe4c28499a1f451ebc841f46d312c",
+  "hook-matrix.json": "46dbe2508160bbe5a41bffb84f65dcac77f4e95c9dcdc39f5420a454ec9aa336",
+  "codex-discovery.json": "70471924ac33f3f76dd1bb10d2f44c613c9ae4d45097e4cad2dd494ca5cd8923",
+  "replace-before.md": "78928846e071b1562a045d2490469521a5bb6d7ee11597dcf2674ae24e7090e9",
+  "ci313-final.log.txt": "3a5225767f04cfdf55e9942aed264d2b4b3de52d66f5a078c638bda58c9ded8b",
+  "migration-replacement.json": "2c297583986ff1ff1908d5481e7d7905fc347e8518e8030f5b13a189ae133b86"
+}

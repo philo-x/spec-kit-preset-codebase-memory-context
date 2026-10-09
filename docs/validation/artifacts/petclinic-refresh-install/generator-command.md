@@ -59,7 +59,7 @@ Normal refresh requires frontmatter `generator: "speckit.codebase-memory"`, `sch
 <!-- PROJECT OVERRIDES END -->
 ```
 
-Preserve every byte between markers. Invalid ownership, schema, or markers block refresh. Upgrade 1.0 to 2.0. Generate all six section headings outside the override markers; treat preserved content, including legacy section headings, as opaque manual bytes, excluded from generated-heading validation. Stop only if another preservation conflict remains. Replacement bypasses old-content checks only, not safety or change detection.
+Preserve every byte between markers. Invalid ownership, schema, or markers block refresh. Upgrade 1.0 to 2.0; stop if preservation conflicts with the new structure. Replacement bypasses old-content checks only, not safety or change detection.
 
 Read only the preset-owned template at
 `.specify/presets/codebase-memory-context/templates/codebase-context-template.md`.

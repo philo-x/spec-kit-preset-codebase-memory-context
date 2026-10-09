@@ -1,0 +1,11 @@
+{
+  "source_commit": "500158f732419217507c7656904b8e6aa1bcc0d6",
+  "original_tracked_files": 132,
+  "changed_original_files": [
+    ".gitignore",
+    "src/main/java/org/springframework/samples/petclinic/owner/PetValidator.java",
+    "src/test/java/org/springframework/samples/petclinic/owner/PetValidatorTests.java"
+  ],
+  "branch": "001-pet-birthdate",
+  "context_is_pre_feature_snapshot": true
+}

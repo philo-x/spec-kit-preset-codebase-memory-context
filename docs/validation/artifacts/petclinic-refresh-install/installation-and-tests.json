@@ -1,0 +1,158 @@
+{
+  "source_commit": "500158f732419217507c7656904b8e6aa1bcc0d6",
+  "installed_files": [
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "THIRD_PARTY_NOTICES.md",
+    "commands/speckit.analyze.md",
+    "commands/speckit.codebase-memory.md",
+    "commands/speckit.implement.md",
+    "commands/speckit.plan.md",
+    "commands/speckit.tasks.md",
+    "docs/catalog-entry.v1.1.0.json",
+    "docs/publishing.md",
+    "docs/validation/petclinic-v1.1.0.md",
+    "docs/validation/v1.0.0.md",
+    "docs/validation/v1.0.1.md",
+    "docs/validation/v1.1.0.md",
+    "preset.yml",
+    "templates/codebase-context-template.md",
+    "tests/fixtures/upstream/spec-kit-v1.1.2/analyze.md",
+    "tests/fixtures/upstream/spec-kit-v1.1.2/implement.md",
+    "tests/fixtures/upstream/spec-kit-v1.1.2/plan.md",
+    "tests/fixtures/upstream/spec-kit-v1.1.2/provenance.json",
+    "tests/fixtures/upstream/spec-kit-v1.1.2/tasks.md"
+  ],
+  "installed_command_sha256": {
+    "speckit.plan.md": "afab5646b6ee1930b22fbd782e64800239526615b78e1bbca425c9b8df21a5ed",
+    "speckit.analyze.md": "da6e22f3bc27e78df7089af893305efd2a20e2dc026ccca152be2a3b35bbbd1a",
+    "speckit.codebase-memory.md": "a4a3066de4dd790229660f14fe9e616ac383bf9cf667b66a1b2b655d4cfff670",
+    "speckit.implement.md": "9a992c1402ac755cf440a16638a2c50f42d53effda6b7bdfef06e62e1d888f5a",
+    "speckit.tasks.md": "a6b49d904f2d8c40a9163ceb6f1bb341f0d322bae39600e5c740f864761b34d6"
+  },
+  "distribution_zip_sha256": "06fdfa5b462026049c4b883b04d116e9396e3ac9660d47a24e23c8a74fbc8981",
+  "nohttp_violations": 0,
+  "tests": 23,
+  "all_passed": true,
+  "cases": [
+    {
+      "name": "processUpdateFormSuccess",
+      "class": "org.springframework.samples.petclinic.owner.PetControllerTests",
+      "passed": true
+    },
+    {
+      "name": "processUpdateFormWithSameName",
+      "class": "org.springframework.samples.petclinic.owner.PetControllerTests",
+      "passed": true
+    },
+    {
+      "name": "processCreationFormSuccess",
+      "class": "org.springframework.samples.petclinic.owner.PetControllerTests",
+      "passed": true
+    },
+    {
+      "name": "initCreationForm",
+      "class": "org.springframework.samples.petclinic.owner.PetControllerTests",
+      "passed": true
+    },
+    {
+      "name": "processUpdateFormWithDuplicateName",
+      "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessUpdateFormHasErrors",
+      "passed": true
+    },
+    {
+      "name": "processUpdateFormWithDataIntegrityViolation",
+      "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessUpdateFormHasErrors",
+      "passed": true
+    },
+    {
+      "name": "processUpdateFormWithBlankName",
+      "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessUpdateFormHasErrors",
+      "passed": true
+    },
+    {
+      "name": "processUpdateFormWithInvalidBirthDate",
+      "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessUpdateFormHasErrors",
+      "passed": true
+    },
+    {
+      "name": "processCreationFormWithMissingPetType",
+      "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessCreationFormHasErrors",
+      "passed": true
+    },
+    {
+      "name": "processCreationFormWithBlankName",
+      "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessCreationFormHasErrors",
+      "passed": true
+    },
+    {
+      "name": "processCreationFormWithDataIntegrityViolation",
+      "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessCreationFormHasErrors",
+      "passed": true
+    },
+    {
+      "name": "processCreationFormWithInvalidBirthDate",
+      "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessCreationFormHasErrors",
+      "passed": true
+    },
+    {
+      "name": "initUpdateForm",
+      "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessCreationFormHasErrors",
+      "passed": true
+    },
+    {
+      "name": "processCreationFormWithDuplicateName",
+      "class": "org.springframework.samples.petclinic.owner.PetControllerTests$ProcessCreationFormHasErrors",
+      "passed": true
+    },
+    {
+      "name": "supportsPetClass",
+      "class": "org.springframework.samples.petclinic.owner.PetValidatorTests",
+      "passed": true
+    },
+    {
+      "name": "validate",
+      "class": "org.springframework.samples.petclinic.owner.PetValidatorTests",
+      "passed": true
+    },
+    {
+      "name": "rejectsFutureBirthDateWithExistingErrorCode",
+      "class": "org.springframework.samples.petclinic.owner.PetValidatorTests",
+      "passed": true
+    },
+    {
+      "name": "acceptsTodaysBirthDate",
+      "class": "org.springframework.samples.petclinic.owner.PetValidatorTests",
+      "passed": true
+    },
+    {
+      "name": "doesNotSupportNonPetClass",
+      "class": "org.springframework.samples.petclinic.owner.PetValidatorTests",
+      "passed": true
+    },
+    {
+      "name": "validateWithLongPetName",
+      "class": "org.springframework.samples.petclinic.owner.PetValidatorTests$ValidateHasErrors",
+      "passed": true
+    },
+    {
+      "name": "validateWithInvalidPetName",
+      "class": "org.springframework.samples.petclinic.owner.PetValidatorTests$ValidateHasErrors",
+      "passed": true
+    },
+    {
+      "name": "validateWithInvalidPetType",
+      "class": "org.springframework.samples.petclinic.owner.PetValidatorTests$ValidateHasErrors",
+      "passed": true
+    },
+    {
+      "name": "validateWithInvalidBirthDate",
+      "class": "org.springframework.samples.petclinic.owner.PetValidatorTests$ValidateHasErrors",
+      "passed": true
+    }
+  ],
+  "maven_exit_code": 0,
+  "lock_removed": true,
+  "sandbox_attempt": "NoHttp passed; Mockito JVM self-attach failed; approved offline rerun passed"
+}
