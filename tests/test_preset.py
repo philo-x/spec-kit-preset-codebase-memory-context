@@ -119,10 +119,9 @@ def test_generator_prompt_contract():
         "Preserve every byte between markers", "--replace-existing",
         "before_codebase_memory", "after_codebase_memory", "optional=true",
         "pending", "not checked", "never directly or indirectly re-enter",
-        "unchanged snapshot bytes and identity", "stop if safe commit is unavailable",
-        "No edits or alternate templates", ".specify/.codebase-memory.lock",
-        "hold it through after-hooks", "fsync", "os.replace",
-        "non-cooperating writer", "Do not wait indefinitely, steal a lock",
+        "compare its exact bytes", "stop without overwriting it",
+        "No edits or alternate templates", "normal file-editing tools",
+        "Reread the result", "does not guarantee protection against simultaneous edits",
     ):
         assert rule in content
     assert content.index("## Evidence Rules") < content.index("## Outline")

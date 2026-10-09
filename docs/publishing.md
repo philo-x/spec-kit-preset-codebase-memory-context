@@ -23,11 +23,12 @@ is the current main-branch document reviewed on 2026-10-09.
 
 See [the current validation record](validation/v1.1.0.md) and the
 [Spring Petclinic field report](validation/petclinic-v1.1.0.md) for observed results.
-The initial field run halted refresh under an unavailable compare-and-swap
-requirement. The [follow-up](validation/petclinic-refresh-install.md) records the
-revised cooperative lock, snapshot-check and atomic-rename protocol, successful
-refresh and clean installation. Its residual external-writer race remains an
-explicit boundary; this is not universal concurrency protection.
+The [refresh/install follow-up](validation/petclinic-refresh-install.md) records
+successful refresh and clean installation under a historical lock-based writing
+procedure. That procedure is superseded by ordinary agent editing, a write-time
+content comparison and output verification; no concurrency guarantee is made.
+See the [simplification record](validation/refresh-simplification.md) for current
+verification. Historical lock results must not be presented as current behavior.
 These local checks do not establish that a public release exists or that the
 catalog has been updated.
 

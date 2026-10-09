@@ -169,6 +169,12 @@ Overrides markers are valid. It preserves every byte between:
 <!-- PROJECT OVERRIDES END -->
 ```
 
+Before writing, the generator checks that an existing target still matches the
+content read before analysis, or that a new target is still absent. Observed
+changes stop the update. It uses normal agent file-editing tools and verifies
+the result; no lock or atomic-write capability is required. This check does not
+guarantee protection against simultaneous edits.
+
 An existing unowned file is not overwritten by default. Move trusted manual
 content into a Project Overrides section, then invoke the command with
 `--replace-existing` only when a full replacement is intended. There is no
@@ -263,17 +269,19 @@ review upstream changes, update fixtures and provenance, reapply the additions,
 and rerun integration checks.
 
 Prompt tests cannot prove byte-preserving refresh, secret exclusion, hook
-execution, or concurrent-write protection. A real agent field run must record
+execution, or detection of intervening edits. A real agent field run must record
 its environment, fixture/source identity, invocation, actual changes, output,
 and limitations before those behaviors are claimed verified. Do not add Python
 simulations and label them generator end-to-end tests.
 
 The current [Spring Petclinic field report](docs/validation/petclinic-v1.1.0.md)
 records active-agent execution without graph access, protection outcomes and a
-real downstream test-first change. The initial existing-file refresh halted under an unavailable compare-and-swap
-requirement. The revised command uses an exclusive generator lock, final snapshot
-checks and atomic replacement; it explicitly discloses the remaining race with
-non-cooperating external writers. See the [follow-up report](docs/validation/petclinic-refresh-install.md) for current results. The report includes generated context and source/command identities.
+real downstream test-first change. The [follow-up report](docs/validation/petclinic-refresh-install.md)
+records a historical lock-based implementation, now superseded by ordinary
+file editing with a write-time content comparison and output verification.
+Its lock and atomic-write results do not validate the current writing procedure.
+See the [refresh simplification record](docs/validation/refresh-simplification.md)
+for the current scope and focused verification.
 
 See the [completion verification](docs/validation/completion.md) for migration,
 replacement, hook, native Codex, graph and full local CI results.

@@ -1,5 +1,11 @@
 # Candidate completion verification
 
+> Writing-procedure update (2026-10-09): the lock/atomic-write procedure recorded
+> here is historical. The current command uses normal agent file editing with
+> a write-time content comparison and output verification. See
+> [refresh simplification](refresh-simplification.md); prior field results and CI
+> identities describe their recorded command versions, not this revision.
+
 Date: 2026-10-09 (Asia/Shanghai). Temporary work remains under
 `/private/tmp/preset-petclinic-validation-20261009/completion`.
 This supplements the [initial field run](petclinic-v1.1.0.md) and

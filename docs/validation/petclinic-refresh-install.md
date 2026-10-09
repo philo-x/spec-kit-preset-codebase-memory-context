@@ -1,5 +1,11 @@
 # Petclinic refresh and clean-install follow-up
 
+> Writing-procedure update (2026-10-09): the lock/atomic-write procedure recorded
+> here is historical. The current command uses normal agent file editing with
+> a write-time content comparison and output verification. See
+> [refresh simplification](refresh-simplification.md); prior field results and CI
+> identities describe their recorded command versions, not this revision.
+
 Date: 2026-10-09. This follows the [initial Petclinic run](petclinic-v1.1.0.md)
 at commit `500158f732419217507c7656904b8e6aa1bcc0d6` in
 `/private/tmp/preset-petclinic-validation-20261009/petclinic`.

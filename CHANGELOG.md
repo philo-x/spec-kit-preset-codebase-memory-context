@@ -4,7 +4,9 @@ All notable changes to this preset are documented in this file. The format is
 based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and releases
 follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] — targeting 1.1.0
+## [Unreleased]
+
+## [1.1.0] - 2026-10-09
 
 ### Changed
 
@@ -15,9 +17,10 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Prepared tag-triggered clean-asset publishing and downloaded-archive verification;
   candidate catalog now references the clean asset rather than the source archive.
 
-- Replaced the unavailable refresh compare-and-swap requirement with an exclusive
-  generator lock, final snapshot checks and atomic rename. Documented residual
-  races with external writers that ignore the lock and stale-lock recovery.
+- Simplified refresh to ordinary agent file editing with a write-time content
+  comparison and output verification. Removed mandatory cooperative locks and
+  filesystem-level atomic publication requirements; retained manual override
+  preservation and schema migration without claiming concurrency protection.
 - Added a reproducible clean distribution builder and use its directory for
   local installation, excluding development environments and validation logs.
   Added real installation and Petclinic refresh/build follow-up evidence.
@@ -88,7 +91,8 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Installation and rendering coverage for skills-based and command-based agent
   integrations.
 
-[Unreleased]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/compare/v1.0.2...HEAD
+[Unreleased]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/compare/v1.0.2...v1.1.0
 [1.0.2]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/releases/tag/v1.0.0

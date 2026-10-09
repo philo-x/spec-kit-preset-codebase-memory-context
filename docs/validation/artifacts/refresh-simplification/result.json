@@ -1,0 +1,17 @@
+{
+  "scope": "Focused editing check on a disposable copy of prior Petclinic context; not a full generation or client-discovery run",
+  "fixture_path": "/private/tmp/preset-refresh-simple-fcd569cx",
+  "source_verified": "PetValidator.java validate rejects future dates with typeMismatch.birthDate",
+  "write_method": "Path.write_bytes (ordinary file write)",
+  "override_bytes_preserved": true,
+  "crlf_manual_content_preserved": true,
+  "generated_headings_valid": true,
+  "unchanged_no_write": true,
+  "observed_external_change": "Halted; writer bytes retained; no overwrite",
+  "lock_directory_created": false,
+  "concurrency_guarantee": false,
+  "command_sha256": "2e933d7c84900cc4a6b4378acf98c64f3f07de964ca539cfea8748f1ba1a86d1",
+  "before_sha256": "0bdb626c6b3415e2a07f525ef80b9600b4069ec4ddaef592104e48fa4ae2dd8c",
+  "refreshed_sha256": "f83a5a61afeb23847a72e0c14e430d8add89e34ea38a5013ccf0adb71b240ace",
+  "external_edit_sha256": "06e156010fb9285838cbe138e96a3f62667802e77c2c2154ffc993b298473b80"
+}
