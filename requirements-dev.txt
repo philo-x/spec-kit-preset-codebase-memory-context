@@ -1,3 +1,2 @@
-specify-cli>=1.0.1,<2
-codebase-memory-mcp==0.10.8
+specify-cli>=1.1.2,<2
 pytest>=8,<10

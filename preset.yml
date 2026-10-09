@@ -3,21 +3,21 @@ schema_version: "1.0"
 preset:
   id: "codebase-memory-context"
   name: "Verified Codebase Context"
-  version: "1.0.2"
-  description: "Generate verified repository context and use it across planning, tasks, analysis, and implementation"
+  version: "1.1.0"
+  description: "Generate evidence-qualified repository context and use it across planning, tasks, analysis, and implementation"
   author: "Xu Yin (philo-x)"
   repository: "https://github.com/philo-x/spec-kit-preset-codebase-memory-context"
   license: "MIT"
 
 requires:
-  speckit_version: ">=1.0.1"
+  speckit_version: ">=1.1.2"
 
 provides:
   templates:
     - type: "command"
       name: "speckit.codebase-memory"
       file: "commands/speckit.codebase-memory.md"
-      description: "Generate or refresh verified repository context"
+      description: "Generate or refresh evidence-qualified repository context"
       strategy: "replace"
 
     - type: "command"
@@ -47,7 +47,7 @@ provides:
     - type: "template"
       name: "codebase-context-template"
       file: "templates/codebase-context-template.md"
-      description: "Stable output structure for verified repository context"
+      description: "Stable output structure for evidence-qualified repository context"
       strategy: "replace"
 
 tags:

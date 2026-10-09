@@ -6,6 +6,45 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-10-09
+
+### Added
+
+- Independent lifecycle hooks for context generation: `before_codebase_memory`
+  and `after_codebase_memory`.
+- Read-only Project Setup Verification preflight checks enforcing repository
+  boundaries, symlink safety, sensitive data isolation, and noise filtering
+  prior to reading or indexing.
+- Concrete behavioral tests covering override preservation, ownership
+  validation, sensitive data isolation, hook failures, and missing-context
+  fallbacks.
+- New validation report for v1.1.0 documenting backend-free execution, protection
+  boundaries, lifecycle hooks, and downstream command consumption.
+
+### Changed
+
+- Aligned baseline with Spec Kit v1.1.2 across all replacement commands
+  (`speckit.plan`, `speckit.tasks`, `speckit.analyze`, and `speckit.implement`).
+- Refactored `speckit.codebase-memory` into a unified lifecycle structure
+  matching native Spec Kit commands (Scope Guard, Pre-Execution Checks,
+  Outline, Mandatory Post-Execution Hooks, Completion Report, Evidence Rules,
+  Done When).
+- Decoupled generator from hard backend prerequisites:
+  - Standard filesystem reading and code search provide the baseline capability.
+  - Code graph tools (MCP or local CLI) act as optional enhancements for symbol
+    navigation and relationship discovery.
+  - Analysis depth is driven by repository applicability and risk rather than
+    forced framework quotas.
+  - Representative traces are selected by value (capped at 5) rather than
+    framework minimums.
+- Removed ignore file modification or creation; absent ignore configurations
+  trigger conservative analysis and recorded limits without modifying the repo.
+- Post-execution hook failures now explicitly distinguish generated file status
+  from incomplete lifecycle validation without unauthorized file rollback.
+- Split CI and dev requirements: `requirements-dev.txt` runs base validation
+  without graph backends, while `requirements-backend.txt` verifies optional
+  backend compatibility.
+
 ## [1.0.2] - 2026-09-03
 
 ### Changed
@@ -48,7 +87,8 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 - Installation and rendering coverage for skills-based and command-based agent
   integrations.
 
-[Unreleased]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/compare/v1.0.2...HEAD
+[Unreleased]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/compare/v1.0.2...v1.1.0
 [1.0.2]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/philo-x/spec-kit-preset-codebase-memory-context/releases/tag/v1.0.0

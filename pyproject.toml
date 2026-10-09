@@ -1,3 +1,6 @@
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-ra"
+markers = [
+    "backend: tests requiring the optional codebase-memory-mcp backend executable or stdio server",
+]
