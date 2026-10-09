@@ -1,0 +1,3 @@
+# Validation artifacts include byte-preserved CRLF overrides and SHA-256 evidence.
+# Keep their exact bytes on every platform.
+docs/validation/artifacts/** -text
