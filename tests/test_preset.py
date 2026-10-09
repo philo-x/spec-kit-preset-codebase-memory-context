@@ -355,3 +355,11 @@ def test_clean_distribution_excludes_development_noise_and_is_reproducible(tmp_p
     (source / "commands/speckit.plan.md").symlink_to(PRESET_DIR / "commands/speckit.plan.md")
     with pytest.raises(ValueError, match="non-symlink"):
         build(source, tmp_path / "unsafe")
+
+
+def test_validation_artifact_digests_survive_checkout():
+    for manifest in (PRESET_DIR / "docs/validation/artifacts").rglob("artifact-sha256.json"):
+        for relative, expected in json.loads(manifest.read_text()).items():
+            artifact = manifest.parent / relative
+            assert artifact.resolve().is_relative_to(manifest.parent.resolve())
+            assert hashlib.sha256(artifact.read_bytes()).hexdigest() == expected, artifact
