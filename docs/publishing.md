@@ -29,8 +29,9 @@ procedure. That procedure is superseded by ordinary agent editing, a write-time
 content comparison and output verification; no concurrency guarantee is made.
 See the [simplification record](validation/refresh-simplification.md) for current
 verification. Historical lock results must not be presented as current behavior.
-These local checks do not establish that a public release exists or that the
-catalog has been updated.
+v1.1.0 is now published and its hosted archive installation passed.
+The official catalog update is submitted and awaits upstream triage/merge.
+See [publication verification](validation/release-v1.1.0.md).
 
 ## Before publishing
 
@@ -61,8 +62,8 @@ catalog has been updated.
 
 [catalog-entry.v1.1.0.json](catalog-entry.v1.1.0.json) is a draft replacement for
 the existing entry, not a submitted or published catalog. It uses the candidate
-tag README URL and clean release-asset download URL, which require the release above. No archive
-checksum is supplied until the actual hosted archive can be hashed.
+tag README URL and clean release-asset download URL, which now resolve to the published release. Its `sha256` is the verified
+public archive digest.
 
 Suggested community docs row:
 
@@ -72,8 +73,8 @@ Suggested community docs row:
 
 A preset README, valid manifest, license, working release, and real-project
 validation remain prerequisites for catalog publishing. The repair prepares
-local readiness and submission material; external release and catalog checks
-remain pending until their evidence exists.
+local readiness and submission material. Publication and hosted installation
+are complete; only official catalog triage and merge remain upstream.
 
 The v1.1.0 catalog draft points to the clean ZIP release asset, rather than the
 GitHub source archive: source archives include historical validation logs that
@@ -81,7 +82,9 @@ can interfere with host-wide scanners. `.github/workflows/release.yml` builds,
 tests, publishes and downloads that asset only when a matching version tag is
 pushed. The workflow tests the downloaded archive in a disposable project.
 
-Current hosted CI: [three jobs passed](https://github.com/philo-x/spec-kit-preset-codebase-memory-context/actions/runs/37905447930).
+Release-source CI: [three jobs passed](https://github.com/philo-x/spec-kit-preset-codebase-memory-context/actions/runs/37911781212).
+Publication: [v1.1.0 released](https://github.com/philo-x/spec-kit-preset-codebase-memory-context/releases/tag/v1.1.0).
+Official catalog: [submission #4892](https://github.com/github/spec-kit/issues/4892), awaiting triage.
 The [completion record](validation/completion.md) lists the candidate validation
 branch and release boundary. [catalog-update.v1.1.0.patch](catalog-update.v1.1.0.patch)
 is historical preparation only. It must not be submitted as a hand-edited PR;

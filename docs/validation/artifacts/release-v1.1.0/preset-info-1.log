@@ -1,0 +1,27 @@
+
+Preset: Verified Codebase Context
+
+  ID:          codebase-memory-context
+  Version:     1.1.0
+  Description: Generate evidence-qualified repository context and use it across 
+planning, tasks, analysis, and implementation
+  Author:      Xu Yin (philo-x)
+  Tags:        code-intelligence, codebase-memory, architecture, workflow
+  Templates:   6
+    - speckit.codebase-memory (command): Generate or refresh evidence-qualified 
+repository context
+    - speckit.plan (command): Use repository context while planning a feature
+    - speckit.tasks (command): Use repository context while generating tasks
+    - speckit.analyze (command): Check design artifacts against repository 
+context before implementation
+    - speckit.implement (command): Use repository context while implementing 
+tasks
+    - codebase-context-template (template): Stable output structure for 
+evidence-qualified repository context
+  Repository:  
+https://github.com/philo-x/spec-kit-preset-codebase-memory-context
+  License:     MIT
+
+  Status: installed
+  Priority: 10
+

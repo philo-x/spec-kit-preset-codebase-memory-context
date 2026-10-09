@@ -60,8 +60,8 @@ specify preset add --from https://github.com/philo-x/spec-kit-preset-codebase-me
 ```
 
 Use the release asset rather than the GitHub source archive, which also includes
-historical validation logs. Hosted download and installation results are recorded
-in the publishing checklist after the release completes.
+historical validation logs. Hosted download and installation passed; see the
+[publication verification](docs/validation/release-v1.1.0.md).
 
 Verify the generator, output template, and consumer commands:
 

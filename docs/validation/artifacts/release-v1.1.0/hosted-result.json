@@ -1,0 +1,103 @@
+{
+  "speckit_version": "1.1.2",
+  "url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/releases/download/v1.1.0/codebase-memory-context.zip",
+  "archive_sha256": "530869fc13fe55d6841e392f83ebfc89e4dd78a5d92aef06f8b76fe1d021de43",
+  "archive_bytes": 82319,
+  "exact_tagged_build_match": true,
+  "resolved_items": [
+    "speckit.codebase-memory",
+    "codebase-context-template",
+    "speckit.plan",
+    "speckit.tasks",
+    "speckit.analyze",
+    "speckit.implement"
+  ],
+  "codex_registered_commands": 5,
+  "installed_noise_absent": true,
+  "remove_restored_core": true,
+  "context_retained": true,
+  "commands": [
+    {
+      "arguments": [
+        "preset",
+        "add",
+        "--from",
+        "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/releases/download/v1.1.0/codebase-memory-context.zip"
+      ],
+      "exit_code": 0,
+      "log": "preset-add-0.log"
+    },
+    {
+      "arguments": [
+        "preset",
+        "info",
+        "codebase-memory-context"
+      ],
+      "exit_code": 0,
+      "log": "preset-info-1.log"
+    },
+    {
+      "arguments": [
+        "preset",
+        "resolve",
+        "speckit.codebase-memory"
+      ],
+      "exit_code": 0,
+      "log": "preset-resolve-2.log"
+    },
+    {
+      "arguments": [
+        "preset",
+        "resolve",
+        "codebase-context-template"
+      ],
+      "exit_code": 0,
+      "log": "preset-resolve-3.log"
+    },
+    {
+      "arguments": [
+        "preset",
+        "resolve",
+        "speckit.plan"
+      ],
+      "exit_code": 0,
+      "log": "preset-resolve-4.log"
+    },
+    {
+      "arguments": [
+        "preset",
+        "resolve",
+        "speckit.tasks"
+      ],
+      "exit_code": 0,
+      "log": "preset-resolve-5.log"
+    },
+    {
+      "arguments": [
+        "preset",
+        "resolve",
+        "speckit.analyze"
+      ],
+      "exit_code": 0,
+      "log": "preset-resolve-6.log"
+    },
+    {
+      "arguments": [
+        "preset",
+        "resolve",
+        "speckit.implement"
+      ],
+      "exit_code": 0,
+      "log": "preset-resolve-7.log"
+    },
+    {
+      "arguments": [
+        "preset",
+        "remove",
+        "codebase-memory-context"
+      ],
+      "exit_code": 0,
+      "log": "preset-remove-8.log"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "release_commit": "52b67e61b0ecdac0aec7c17acb0852e0355f31c1",
+  "candidate_ci": {
+    "id": 37911781212,
+    "html_url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/actions/runs/37911781212",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "candidate_jobs": [
+    {
+      "name": "Optional Backend Contract Validation",
+      "html_url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/actions/runs/37911781212/job/113758389004",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Base Validation (No Backend) (3.11)",
+      "html_url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/actions/runs/37911781212/job/113758389398",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Base Validation (No Backend) (3.13)",
+      "html_url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/actions/runs/37911781212/job/113758389440",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "tag_ci": {
+    "id": 37912023848,
+    "html_url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/actions/runs/37912023848",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "release_workflow": {
+    "id": 37912023865,
+    "html_url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/actions/runs/37912023865",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "release": {
+    "html_url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/releases/tag/v1.1.0",
+    "tag_name": "v1.1.0",
+    "published_at": "2026-10-09T09:33:48Z",
+    "draft": false,
+    "prerelease": false
+  },
+  "assets": [
+    {
+      "name": "codebase-memory-context.zip",
+      "size": 82319,
+      "browser_download_url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/releases/download/v1.1.0/codebase-memory-context.zip",
+      "digest": "sha256:530869fc13fe55d6841e392f83ebfc89e4dd78a5d92aef06f8b76fe1d021de43"
+    }
+  ],
+  "catalog_submission": {
+    "number": 4892,
+    "html_url": "https://github.com/github/spec-kit/issues/4892",
+    "state": "open",
+    "created_at": "2026-10-09T09:37:08Z"
+  },
+  "catalog_labels": [
+    "triage-must-have"
+  ]
+}

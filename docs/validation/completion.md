@@ -1,5 +1,10 @@
 # Candidate completion verification
 
+> Publication update (2026-10-09): v1.1.0 has been released, full CI and hosted
+> installation passed, and catalog submission #4892 is open. The earlier pending
+> release/PR-boundary statements below are historical; see
+> [publication verification](release-v1.1.0.md) for current results.
+
 > Writing-procedure update (2026-10-09): the lock/atomic-write procedure recorded
 > here is historical. The current command uses normal agent file editing with
 > a write-time content comparison and output verification. See
