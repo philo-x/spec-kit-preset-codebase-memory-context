@@ -78,3 +78,8 @@ GitHub source archive: source archives include historical validation logs that
 can interfere with host-wide scanners. `.github/workflows/release.yml` builds,
 tests, publishes and downloads that asset only when a matching version tag is
 pushed. The workflow tests the downloaded archive in a disposable project.
+
+Current hosted CI: [three jobs passed](https://github.com/philo-x/spec-kit-preset-codebase-memory-context/actions/runs/37905447930).
+The [completion record](validation/completion.md) lists the candidate validation
+branch and release boundary. [catalog-update.v1.1.0.patch](catalog-update.v1.1.0.patch)
+is the verified two-file upstream update, dependent on the clean asset publication.

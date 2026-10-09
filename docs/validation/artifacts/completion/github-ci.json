@@ -1,0 +1,24 @@
+{
+  "id": 37905447930,
+  "head_sha": "e5d702af8a34165ba9c8ccb722b555c91fb302b7",
+  "status": "completed",
+  "conclusion": "success",
+  "html_url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/actions/runs/37905447930",
+  "jobs": [
+    {
+      "name": "Optional Backend Contract Validation",
+      "conclusion": "success",
+      "html_url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/actions/runs/37905447930/job/113737680870"
+    },
+    {
+      "name": "Base Validation (No Backend) (3.11)",
+      "conclusion": "success",
+      "html_url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/actions/runs/37905447930/job/113737681149"
+    },
+    {
+      "name": "Base Validation (No Backend) (3.13)",
+      "conclusion": "success",
+      "html_url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/actions/runs/37905447930/job/113737681234"
+    }
+  ]
+}

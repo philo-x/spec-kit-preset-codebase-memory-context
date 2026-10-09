@@ -77,8 +77,13 @@ checks deselected. [Python 3.13 log](artifacts/completion/ci313-final.log.txt):
 25 passed, no skips. Strict backend testing initially exposed a version conflict
 with the live 0.11.0 server and a long socket path. Tests now create their own
 short private runtime without stopping the user's server. All final checks passed.
-Remote GitHub Actions results will be recorded separately against the submitted
-validation commit; local matrix results are not presented as hosted CI results.
+Actual [GitHub Actions run 37905447930](https://github.com/philo-x/spec-kit-preset-codebase-memory-context/actions/runs/37905447930)
+completed successfully at `e5d702af8a34165ba9c8ccb722b555c91fb302b7`.
+All three jobs passed: backend-free Python 3.11, backend-free Python 3.13, and
+pinned-backend contracts. [Hosted CI evidence](artifacts/completion/github-ci.json)
+records exact commit and job URLs. The commit adds a hash check and Git attributes
+preserving CRLF evidence across checkouts. Subsequent documentation records this
+result; local results above retain their earlier 25-test scope.
 
 The remote v1.1.0 ref was checked and returned 404. Catalog changes therefore
 remain a reviewable dependent update, not an assertion of an available release.
@@ -93,3 +98,25 @@ The external-writer race remains an explicit safety boundary, not a test that
 will eventually prove universal protection: cooperating invocations are locked,
 observed edits block commit, and non-cooperating last-instant edits can still race.
 [Artifact hashes](artifacts/completion/artifact-sha256.json) identify retained evidence.
+
+## Reviewable branches and release decision
+
+The preset changes were pushed to
+[codex/validation-completion](https://github.com/philo-x/spec-kit-preset-codebase-memory-context/tree/codex/validation-completion).
+The GitHub connector denied write/PR operations with 403; existing Git credentials
+successfully pushed only the isolated validation branch. No PR was created, main
+was not changed, and no version tag was published.
+
+The exact [catalog patch](../catalog-update.v1.1.0.patch) was regenerated with
+standard context against a fresh upstream checkout and verified. It preserves
+the creation date, updates version/requirements/description/download URL and the
+existing docs row, and leaves ordering intact. Its prepared fork branch is
+`community/codebase-context-1.1.0` in `philo-x/spec-kit`; this must not merge into
+the official catalog before the clean release asset exists. The initial automatic
+review rejected the push as an apparent upstream-target mismatch. Explicit remote
+configuration and repository ownership were checked before retrying the fork-only
+operation. This did not bypass a rejected official-upstream write.
+
+Publishing v1.1.0 and merging the candidate require the maintainer's release
+confirmation. Hosted package download evidence and upstream catalog acceptance
+remain dependent on that actual publication; they are not represented as passed.

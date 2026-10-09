@@ -1,65 +1,68 @@
+diff --git a/docs/community/presets.md b/docs/community/presets.md
+index 01ffd40..c72df26 100644
+--- a/docs/community/presets.md
++++ b/docs/community/presets.md
+@@ -45,7 +45,7 @@ The following community-contributed presets customize how Spec Kit behaves — o
+ | SpecAssay | Appends durable-ID, Carries, and SpecAssay vocabulary onto Spec Kit spec, tasks, and constitution templates. | 3 templates | specassay-check extension | [specassay](https://github.com/rdryfoos/specassay) |
+ | Table of Contents Navigation | Adds a navigable Table of Contents to generated spec.md, plan.md, and tasks.md documents | 3 templates, 3 commands | — | [spec-kit-preset-toc-navigation](https://github.com/Quratulain-bilal/spec-kit-preset-toc-navigation) |
+ | Test-First Governance | Governs TDD with coverage-complete BDD/ATDD Gherkin scenarios, explicit suite ownership, professional test reports, traceability, and risk-based quality gates. | 10 templates, 8 commands | — | [spec-kit-preset-test-first-governance](https://github.com/ka-zo/spec-kit-preset-test-first-governance) |
+-| Verified Codebase Context | Generates evidence-qualified repository context with codebase-memory-mcp and applies it across planning, tasks, analysis, and implementation. | 1 template, 5 commands | — | [spec-kit-preset-codebase-memory-context](https://github.com/philo-x/spec-kit-preset-codebase-memory-context) |
++| Verified Codebase Context | Generates evidence-qualified repository context with optional graph enhancement for planning, tasks, analysis, and implementation. | 1 template, 5 commands | — | [spec-kit-preset-codebase-memory-context](https://github.com/philo-x/spec-kit-preset-codebase-memory-context) |
+ | VS Code Ask Questions | Enhances the clarify command to use `vscode/askQuestions` for batched interactive questioning. | 1 command | — | [spec-kit-presets](https://github.com/fdcastel/spec-kit-presets) |
+ | Workflow Preset | Behavior-first specification, design artifacts, and agent-native handoff orchestration — adds requirement-phase behavior drafts, formal BDD/UIF/behavior contracts, optional design artifacts, and scoped implementation handoffs with Core Agent, Vertical Planner Agent, and Worker Agent modes | 22 templates, 8 commands | — | [spec-kit-workflow-preset](https://github.com/bigsmartben/spec-kit-workflow-preset) |
+ 
+diff --git a/presets/catalog.community.json b/presets/catalog.community.json
+index 111e89b..d88986f 100644
 --- a/presets/catalog.community.json
 +++ b/presets/catalog.community.json
-@@ -3,1 +3,1 @@
+@@ -1,6 +1,6 @@
+ {
+   "schema_version": "1.0",
 -  "updated_at": "2026-10-07T00:00:00Z",
 +  "updated_at": "2026-10-09T00:00:00Z",
-@@ -258,27 +258,27 @@
--    "codebase-memory-context": {
--      "name": "Verified Codebase Context",
--      "id": "codebase-memory-context",
+   "catalog_url": "https://raw.githubusercontent.com/github/spec-kit/main/presets/catalog.community.json",
+   "presets": {
+     "a11y-governance": {
+@@ -258,16 +258,16 @@
+     "codebase-memory-context": {
+       "name": "Verified Codebase Context",
+       "id": "codebase-memory-context",
 -      "version": "1.0.1",
 -      "description": "Generates evidence-qualified repository context with codebase-memory-mcp and applies it across planning, tasks, analysis, and implementation.",
--      "author": "Xu Yin (philo-x)",
--      "repository": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context",
++      "version": "1.1.0",
++      "description": "Generate evidence-qualified repository context and use it across planning, tasks, analysis, and implementation",
+       "author": "Xu Yin (philo-x)",
+       "repository": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context",
 -      "download_url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/archive/refs/tags/v1.0.1.zip",
 -      "homepage": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context",
 -      "documentation": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/blob/v1.0.1/README.md",
--      "license": "MIT",
--      "requires": {
--        "speckit_version": ">=1.0.1"
--      },
--      "provides": {
--        "templates": 1,
--        "commands": 5
--      },
--      "tags": [
--        "code-intelligence",
--        "codebase-memory",
--        "architecture",
--        "workflow"
--      ],
--      "created_at": "2026-08-26T00:00:00Z",
--      "updated_at": "2026-08-26T00:00:00Z"
--    },
-+    "codebase-memory-context": {
-+      "name": "Verified Codebase Context",
-+      "id": "codebase-memory-context",
-+      "version": "1.1.0",
-+      "description": "Generate evidence-qualified repository context and use it across planning, tasks, analysis, and implementation",
-+      "author": "Xu Yin (philo-x)",
-+      "repository": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context",
-+      "license": "MIT",
+       "license": "MIT",
 +      "download_url": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/releases/download/v1.1.0/codebase-memory-context.zip",
 +      "homepage": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context",
 +      "documentation": "https://github.com/philo-x/spec-kit-preset-codebase-memory-context/blob/v1.1.0/README.md",
-+      "requires": {
+       "requires": {
+-        "speckit_version": ">=1.0.1"
 +        "speckit_version": ">=1.1.2"
-+      },
-+      "provides": {
-+        "templates": 1,
-+        "commands": 5
-+      },
-+      "tags": [
-+        "code-intelligence",
-+        "codebase-memory",
-+        "architecture",
-+        "workflow"
-+      ],
-+      "created_at": "2026-08-26T00:00:00Z",
+       },
+       "provides": {
+         "templates": 1,
+@@ -280,7 +280,7 @@
+         "workflow"
+       ],
+       "created_at": "2026-08-26T00:00:00Z",
+-      "updated_at": "2026-08-26T00:00:00Z"
 +      "updated_at": "2026-10-09T00:00:00Z"
-+    },
---- a/docs/community/presets.md
-+++ b/docs/community/presets.md
-@@ -48,1 +48,1 @@
--| Verified Codebase Context | Generates evidence-qualified repository context with codebase-memory-mcp and applies it across planning, tasks, analysis, and implementation. | 1 template, 5 commands | — | [spec-kit-preset-codebase-memory-context](https://github.com/philo-x/spec-kit-preset-codebase-memory-context) |
-+| Verified Codebase Context | Generates evidence-qualified repository context with optional graph enhancement for planning, tasks, analysis, and implementation. | 1 template, 5 commands | — | [spec-kit-preset-codebase-memory-context](https://github.com/philo-x/spec-kit-preset-codebase-memory-context) |
+     },
+     "command-density": {
+       "name": "Command Density",
+@@ -994,8 +994,8 @@
+       "name": "Software Humano",
+       "id": "software-humano",
+       "version": "2.0.3",
+-      "description": "Compiles the requirements of the Software Humano manifesto into the eight core Spec Kit commands and into the spec, plan and tasks templates, quoting the manifesto's literal text rather than rephrasing it. Treats the cost a product transfers to the person — attention, learning, decisions they did not come to make — as something budgeted and verified.",
+-      "author": "Damián Acuña",
++      "description": "Compiles the requirements of the Software Humano manifesto into the eight core Spec Kit commands and into the spec, plan and tasks templates, quoting the manifesto's literal text rather than rephrasing it. Treats the cost a product transfers to the person \u2014 attention, learning, decisions they did not come to make \u2014 as something budgeted and verified.",
++      "author": "Dami\u00e1n Acu\u00f1a",
+       "repository": "https://github.com/dacunao/software-humano-speckit",
+       "download_url": "https://github.com/dacunao/software-humano-speckit/releases/download/preset-software-humano-v2.0.3/Software_Humano_Preset_v2.0.3.zip",
+       "sha256": "c5e9725a8aea834329fe9d7f456c9f0baabedcedad3fb4c2645b83536899e069",
