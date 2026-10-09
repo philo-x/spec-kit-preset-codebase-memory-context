@@ -108,24 +108,116 @@ def test_upstream_baseline_preserved_outside_augmentation(name):
 def test_generator_prompt_contract():
     content = read_command("speckit.codebase-memory")
     assert "scripts:" not in content.split("---", 2)[1]
-    for heading in ("Scope Guard", "Pre-Execution Checks", "Evidence Rules", "Outline", "Mandatory Post-Execution Hooks", "Completion Report", "Done When"):
+    for heading in ("Scope Guard", "Output Contract", "Pre-Execution Checks", "Evidence Rules", "Outline", "Post-Execution Checks", "Completion Report", "Done When"):
         assert f"## {heading}" in content
     steps = re.findall(r"^### (\d+)\. (.+)$", content, re.M)
     assert [number for number, _ in steps] == [str(n) for n in range(1, 8)]
     for rule in (
         "The target is the sole persistent output", "Never run project build",
         "never follow out-of-root links", "Reject target symlinks",
-        "Missing optional tools or metadata do not block", "direct-source fallback",
+        "Missing optional tools or metadata do not block", "direct reading and search",
         "Preserve every byte between markers", "--replace-existing",
-        "before_codebase_memory", "after_codebase_memory", "optional=true",
-        "pending", "not checked", "never directly or indirectly re-enter",
+        "before_codebase_memory", "after_codebase_memory",
+        "no hooks were checked", "never directly or indirectly re-enter",
         "compare its exact bytes", "stop without overwriting it",
         "No edits or alternate templates", "normal file-editing tools",
         "Reread the result", "does not guarantee protection against simultaneous edits",
     ):
         assert rule in content
+    assert "still absent at write time" in content
+    assert "safely written and verified or left unchanged" in content
+    assert not re.search(r"\bcommit(?:ted)?\b", content)
     assert content.index("## Evidence Rules") < content.index("## Outline")
     assert ".specify/presets/codebase-memory-context/templates/codebase-context-template.md" in content
+
+
+def test_generator_hook_contract_matches_official_prompt_semantics():
+    """Compare complete official instructions, not real hook execution by an agent."""
+    content = read_command("speckit.codebase-memory")
+    official = (Path(specify_cli.__file__).parent / "core_pack/commands/constitution.md").read_text()
+
+    def adapt(block):
+        return (block.replace("before_constitution", "before_codebase_memory")
+                .replace("after_constitution", "after_codebase_memory")
+                .replace("constitution update", "codebase context generation or refresh"))
+
+    before = content.split("**Check for extension hooks (before", 1)[1].split("\n## Evidence Rules", 1)[0]
+    official_before = official.split("**Check for extension hooks (before", 1)[1].split("\n## Outline", 1)[0]
+    after = content.split("## Post-Execution Checks\n\n", 1)[1].split("\n## Completion Report", 1)[0]
+    official_after = official.split("## Post-Execution Checks\n\n", 1)[1]
+    assert before.rstrip() == adapt(official_before).rstrip()
+    assert after.rstrip() == adapt(official_after).rstrip()
+    assert content.index("## Pre-Execution Checks") < content.index("**Check for extension hooks (before") < content.index("## Evidence Rules")
+    for removed in ("before_codebase-memory", "after_codebase-memory", "Before Hooks", "priority",
+                    "compatible executor"):
+        assert removed not in content
+    readme = (PRESET_DIR / "README.md").read_text()
+    assert "migrate them to the underscore names" in readme
+    assert "hyphenated\naliases are not read" in readme
+    assert "complete\nhook rules and output blocks" in readme
+    assert "Non-empty conditions are skipped without evaluation" in readme
+    assert "do not validate the current" in readme
+
+
+def test_generator_boundaries_discovery_and_output_are_centralized():
+    content = read_command("speckit.codebase-memory")
+    scope = content.split("## Scope Guard", 1)[1].split("## Output Contract", 1)[0]
+    output = content.split("## Output Contract", 1)[1].split("## Pre-Execution Checks", 1)[0]
+    discovery = content.split("### Tool Capability Discovery", 1)[1].split("**Check for extension hooks (before", 1)[0]
+    for rule in ("sole persistent output", "out-of-root links", "Ordinary non-sensitive configuration",
+                 "credentials", "Keep unclear security exclusions closed",
+                 "Do not require feature artifacts or a clean working tree.",
+                 "Preconfigured MCP tools may be used within existing authorization",
+                 "indexes, caches, and daemons are separate side effects",
+                 "permitted only when covered by that authorization",
+                 "without changes to other project files or Git state",
+                 "Tool availability alone does not authorize these effects or `index_repository`",
+                 "If their authorization or effects are unclear, use direct reading and search",
+                 "Mandatory status does not authorize", "halt and report",
+                 "other network-dependent project commands",
+                 "does not prohibit authorized MCP tool use",
+                 "including in error messages or YAML parser errors",
+                 "redact sensitive details before reporting them"):
+        assert rule in scope
+    for rule in ('`schema_version: "1.0"` or `"2.0"`', "Preserve every byte between markers",
+                 "opaque manual bytes", "--replace-existing", "compare its exact bytes",
+                 "still absent", "Reread the result", "maximum 8,000 generated words, no minimum",
+                 "preserve secrets in overrides", "No edits or alternate templates",
+                 'generator: "speckit.codebase-memory"', "Invalid ownership, schema, or markers block refresh",
+                 "including\n  with `--replace-existing`", "appeared, disappeared, changed",
+                 "stop without overwriting it", "preserved overrides before reporting success",
+                 "does not guarantee protection against simultaneous edits",
+                 "Never restore an old snapshot over user edits"):
+        assert rule in output
+    for rule in ("available and authorized", "Prefer structured navigation", "when it helps",
+                 "neither a graph backend nor `index_repository` is required", "current authorized source", "direct reading and search"):
+        assert rule in discovery
+    for removed in ("dedicated filesystem", "lock directory", "fsync", "hard-link", "atomic rename", "compare-and-swap"):
+        assert removed not in output
+    readme = " ".join((PRESET_DIR / "README.md").read_text().split())
+    for rule in ("only within existing authorization", "without changing other project files or Git state",
+                 "Tool availability alone does not authorize", "side effects or `index_repository`",
+                 "unclear authorization or effects require direct reads/search",
+                 "Feature artifacts and a clean working tree are not required",
+                 "other network-dependent project commands",
+                 "does not prohibit authorized MCP tool use",
+                 "redacting secrets from all error messages, including YAML parser errors"):
+        assert rule in readme
+    assert content.index("### Tool Capability Discovery") < content.index("## Outline")
+    assert content.count("compare its exact bytes") == 1
+    assert content.count("Preserve every byte between markers") == 1
+
+
+def test_generator_analysis_quality_contract():
+    content = " ".join(read_command("speckit.codebase-memory").split())
+    for n in range(1, 9):
+        assert f"| D{n}." in content
+    for rule in ("Verified", "Corroborated", "Inferred", "Unknown",
+                 "A graph and its source file are not independent", "do not prove observed runtime behavior",
+                 "Empty searches or zero references do not prove absence", "bounded inspection",
+                 "up to five meaningful flows", "A reachable set is not an ordered execution trace",
+                 "applicable-area coverage", "not merely when the trace quota is reached"):
+        assert rule in content
 
 
 def test_output_template_contract():

@@ -106,29 +106,40 @@ repository conventions change materially.
 
 The command:
 
-- performs read-only Project Setup Verification to ensure path, symlink, and
-  sensitive credential boundaries are respected before any reading or indexing;
-- executes pre-execution hooks (`before_codebase_memory`) with re-entrancy
-  guards;
-- uses available repository reading and search capabilities as a tool-neutral
-  baseline, incorporating graph tools as optional enhancements when available;
+- checks repository access, target ownership, and template requirements before
+  hooks or broad analysis;
+- processes pre-execution hooks (`before_codebase_memory`) using the official
+  prompt behavior, within the generator's read-only and re-entrancy boundaries;
+- discovers available and authorized repository-analysis tools before broad
+  analysis, preferring structured navigation when useful and falling back to
+  direct reads/search; no indexing call is required, and material conclusions
+  must be verified against current source;
 - identifies project technology stacks via manifest detection;
 - follows seven steps: structure discovery, applicability assessment, mechanism
-  inspection, representative traces, coverage review, synthesis, and safe commit;
+  inspection, representative traces, coverage review, synthesis, and safe writing;
 - traces representative business flows (capped at five) prioritizing
   modification boundaries;
 - audits evidence coverage and reports explicit boundaries and limitations;
 - synthesizes context in memory, strictly preserving the human-maintained
   Project Overrides section on refresh;
-- requires a guarded safe commit to `.specify/memory/codebase.md`, halting if
-  the agent cannot provide the required protection; and
-- executes post-execution hooks (`after_codebase_memory`) and reports lifecycle
-  completion status.
+- checks for intervening target changes, writes `.specify/memory/codebase.md`,
+  and rereads the result under the centralized Output Contract; and
+- processes post-execution hooks (`after_codebase_memory`) and reports actual
+  hook outcomes separately from the file result.
 
 The generator records repository-declared build, test, quality, run, and
-deployment commands but does not execute them. It does not modify application
+deployment commands but does not execute them. It also prohibits other
+network-dependent project commands; this restriction does not prohibit authorized
+MCP tool use within the stated boundaries. It does not modify application
 source, build files, configuration, tests, ignore files, deployment artifacts,
-or any file other than `.specify/memory/codebase.md`.
+or any file other than `.specify/memory/codebase.md`. Ordinary non-sensitive
+configuration and examples can supply evidence; credentials, production data,
+and security-excluded paths remain inaccessible. Analysis tools and hooks cannot
+expand these boundaries. Preconfigured MCP tools may use tool-managed indexes,
+caches, or daemons only within existing authorization and without changing other
+project files or Git state. Tool availability alone does not authorize these
+side effects or `index_repository`; unclear authorization or effects require
+direct reads/search. Feature artifacts and a clean working tree are not required.
 
 ## When to Use It
 
@@ -210,10 +221,13 @@ observability report or security certification.
 
 ## Lifecycle Hook Configuration
 
-`before_codebase_memory` and `after_codebase_memory` are events read by this
-preset's generator from `.specify/extensions.yml`. They are not automatically
-configured by preset installation. Commands must already be installed, invocable
-in the active agent, read-only, and unable to re-enter the generator. For example:
+The generator reads `before_codebase_memory` and `after_codebase_memory` from
+`.specify/extensions.yml`, following the `before_<command>` / `after_<command>`
+convention. These are preset events, not built-in Spec Kit events or automatically
+configured registrations. If using the previously documented `before_codebase-memory`
+and `after_codebase-memory` keys, migrate them to the underscore names; hyphenated
+aliases are not read. Commands must already be installed, invocable in the active agent,
+read-only, and unable to re-enter the generator. For example:
 
 ```yaml
 hooks:
@@ -221,17 +235,27 @@ hooks:
     - command: speckit.review-context-scope
       enabled: true
       optional: true
-      priority: 10
 ```
 
 This example names a project-supplied command; the preset does not provide it.
-Optional hooks need explicit execution authorization. Missing configuration
-means no hooks. Invalid configuration is reported as unchecked. A mandatory
-hook that fails or cannot be evaluated blocks generation; a post-hook failure
-retains the generated file and reports an incomplete lifecycle. Non-empty
-conditions require a compatible evaluator; unavailable or unsupported evaluation
-is pending, never an assumed successful skip. The generator has stricter hook
-safety rules than the unchanged upstream consumer commands.
+Hook handling follows the official v1.1.2
+[constitution](https://github.com/github/spec-kit/blob/v1.1.2/templates/commands/constitution.md)
+command: both Pre-Execution Checks and Post-Execution Checks contain its complete
+hook rules and output blocks, changing only event names and the business description.
+Hooks are enabled by default, optional hooks displayed for
+user invocation, and executable mandatory hooks actually invoked and awaited.
+Non-empty conditions are skipped without evaluation and left to HookExecutor;
+the prompt does not coordinate an evaluator or sort by priority. Missing
+configuration means no hooks; invalid configuration is reported with the parser
+error and generation continues with hooks unchecked, including mandatory hooks.
+Scope Guard requires redacting secrets from all error messages, including YAML
+parser errors.
+
+Independent safety and output checks still halt unsafe work. Mandatory
+status cannot authorize unsafe access, side effects, or generator re-entry; an
+unsafe mandatory invocation halts the command. Actual failures and unavailable
+commands are reported, and post-hook failures retain the target. A condition skip
+is unevaluated, not proof that the condition was false or the hook succeeded.
 
 ## Development and Validation
 
@@ -268,9 +292,11 @@ fixtures are also checked against the installed 1.1.2 core pack. On upgrade,
 review upstream changes, update fixtures and provenance, reapply the additions,
 and rerun integration checks.
 
-Prompt tests cannot prove byte-preserving refresh, secret exclusion, hook
-execution, or detection of intervening edits. A real agent field run must record
-its environment, fixture/source identity, invocation, actual changes, output,
+Prompt tests check the written rules for official hook semantics, tool discovery,
+and the unchanged analysis/output contracts. They cannot prove byte-preserving
+refresh, secret exclusion, hook execution, or detection of intervening edits.
+A real agent field run must record its environment, fixture/source identity,
+invocation, actual changes, output,
 and limitations before those behaviors are claimed verified. Do not add Python
 simulations and label them generator end-to-end tests.
 
@@ -283,8 +309,10 @@ Its lock and atomic-write results do not validate the current writing procedure.
 See the [refresh simplification record](docs/validation/refresh-simplification.md)
 for the current scope and focused verification.
 
-See the [completion verification](docs/validation/completion.md) for migration,
-replacement, hook, native Codex, graph and full local CI results.
+See the historical [completion verification](docs/validation/completion.md) for
+migration, replacement, hook, native Codex, graph and full local CI results.
+Its hook outcomes describe the earlier semantics and do not validate the current
+hook handling; the refactored prompt needs a new agent field run.
 
 See the [release checklist](docs/publishing.md) for publishing and catalog updates.
 
