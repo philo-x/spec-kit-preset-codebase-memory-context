@@ -21,35 +21,38 @@ evidence_tier: "verify"
 ### Module Layout and Boundaries
 [List repository modules, packages, or directory structure in build/dependency order, describing verified dependency directions and major boundaries.]
 
-### Entry Points
-[List deployable web servers, CLI binaries, background jobs, event listeners, or public library exports.]
+### Entry Points and Code Anchors
+[List deployable web servers, CLI binaries, background jobs, event listeners, or public library exports, citing concrete source files and code anchors.]
 
 ## 2. Core Flows and Interface Boundaries
 
 ### Request Pipeline and Middleware
-[Describe the global request/execution pipeline: routing mechanism, filters, middlewares, interceptors, and exception/error handling conventions in verified execution order.]
+[Describe the global request or execution pipeline: routing mechanism, filters, middlewares, interceptors, and error handling conventions in verified execution order. If not applicable (e.g. pure library or CLI), state why.]
 
 ### Security and Trust Boundaries
 [Describe authentication mechanisms, token/session validation, authorization guards/RBAC, tenant/data isolation, credential boundaries, and public versus protected endpoint conventions without secret values.]
 
 ### Representative Traces
-[Summarize one to five representative business flows with their entry point, major hops across layers, transaction boundary, side effects (cache, events, external calls), and failure path.]
+[Summarize one to five representative business flows with their entry point, major hops across layers, transaction boundary, side effects (cache, events, external calls), and failure path. Prioritize flows explaining modification boundaries; do not fabricate traces when not applicable.]
 
 ### External Integrations
-[List external databases, caches, message brokers, third-party APIs, and downstream services with verified usage status, consumer mechanism, and evidence.]
+[List external databases, caches, message brokers, third-party APIs, and downstream services with verified usage status, consumer mechanism, and evidence. If not applicable, state why.]
 
 ## 3. Data Persistence and Storage Model
 
 ### Storage and Entity Conventions
-[Describe storage technologies, entity/model base classes, primary key/identifier strategies, auditing fields, logical deletion, and tenant/data scoping conventions.]
+[Describe storage technologies, entity/model base classes, primary key/identifier strategies, auditing fields, logical deletion, and tenant/data scoping conventions. If no persistence layer exists, state why.]
 
 ### Transactions and Schema Migrations
-[Describe transaction demarcation patterns (declarative or programmatic boundaries, rollback rules) and database migration/schema management tooling.]
+[Describe transaction demarcation patterns (declarative or programmatic boundaries, rollback rules) and database migration/schema management tooling. If not applicable, state why.]
 
 ## 4. Development Conventions and Validation Commands
 
 ### Coding and Design Patterns
 [Describe repository-specific patterns for organizing services, interfaces/implementations, dependency injection, validation, and error envelopes.]
+
+### Modification Anchors and Extension Patterns
+[For common change types, identify similar existing implementations, mechanisms to reuse (base classes, registration points, common utilities), boundaries to protect, and validation entry points.]
 
 ### Testing Strategy
 [Describe test frameworks in actual use, unit/integration boundaries, test data/fixture setup, mock conventions, and representative test files.]
@@ -65,7 +68,7 @@ evidence_tier: "verify"
 
 ## 5. Evidence and Coverage Limitations
 
-[Record the codebase-memory project and index status, verified bounded scopes, excluded or stale paths inspected directly, unverified external dependencies, and any conclusion that remains inferred or unknown.]
+[Record verified bounded scopes, excluded or inaccessible paths, unverified external dependencies, and any conclusion that remains inferred or unknown. If a code graph backend was used, record the graph project and index coverage status; otherwise, record the direct file inspection and search scopes.]
 
 <!-- PROJECT OVERRIDES START -->
 ## 6. Project Overrides
