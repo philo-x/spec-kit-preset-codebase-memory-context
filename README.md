@@ -28,8 +28,9 @@ written.
 The generator does not install or update analysis tools or graph backends and
 does not modify project ignore files. The upstream `implement` workflow still
 creates or verifies ignore files during implementation. No additional Python
-helper or PyYAML installation is required by the generator prompt; Spec Kit
-itself and the development tests have their own Python dependencies.
+helper is shipped by the preset. Template setup uses Spec Kit's shared
+`resolve-template` script and its installed dependencies; the development tests
+have their own Python dependencies.
 
 ## Installation
 
@@ -108,6 +109,10 @@ The command:
 
 - checks repository access, target ownership, and template requirements before
   hooks or broad analysis;
+- runs the shared `resolve-template` script from the repository root and parses
+  `TEMPLATE_NAME` and `TEMPLATE_CONTENT` for `codebase-context-template`, honoring
+  project overrides and composing preset/extension layers; resolution or output
+  contract failures stop generation without a hardcoded-path fallback;
 - processes pre-execution hooks (`before_codebase_memory`) using the official
   prompt behavior, within the generator's read-only and re-entrancy boundaries;
 - discovers available and authorized repository-analysis tools before broad
@@ -268,8 +273,10 @@ python -m venv .venv
 The development dependency pins Spec Kit 1.1.2. Base tests check the manifest,
 seven-step prompt contract, schema 2.0 template, all six installed items, local
 ZIP installation, and all five commands rendered and removed across Codex,
-Claude, Copilot, and Gemini with Python, Bash, and PowerShell selection. Script
-selection is checked; the generated shell/PowerShell workflows are not executed.
+Claude, Copilot, and Gemini with Python, Bash, and PowerShell selection. Generator
+setup tests execute the installed Python and Bash template resolvers for preset
+content, project overrides, and missing-template failures. PowerShell selection
+is checked through rendering; its resolver and the full LLM workflows are not executed.
 
 Optional third-party backend contracts:
 

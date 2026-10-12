@@ -6,6 +6,15 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Added the generator's missing Bash, PowerShell, and Python `scripts` declarations
+  and `{SCRIPT}` execution/JSON parsing for the shared template resolver. Use
+  `TEMPLATE_CONTENT` from the resolution stack instead of a hardcoded preset path,
+  preserving template contract validation and stopping on resolution failures.
+- Added installed Python/Bash resolver tests for preset content, project overrides,
+  and missing templates, and generator script rendering checks for all integrations.
+
 ## [1.1.0] - 2026-10-09
 
 ### Changed

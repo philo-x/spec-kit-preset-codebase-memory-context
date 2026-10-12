@@ -107,7 +107,12 @@ def test_upstream_baseline_preserved_outside_augmentation(name):
 
 def test_generator_prompt_contract():
     content = read_command("speckit.codebase-memory")
-    assert "scripts:" not in content.split("---", 2)[1]
+    for script in (
+        "scripts/bash/resolve-template.sh codebase-context-template --json",
+        "scripts/powershell/resolve-template.ps1 codebase-context-template -Json",
+        "scripts/python/resolve_template.py codebase-context-template --json",
+    ):
+        assert script in content.split("---", 2)[1]
     for heading in ("Scope Guard", "Output Contract", "Pre-Execution Checks", "Evidence Rules", "Outline", "Post-Execution Checks", "Completion Report", "Done When"):
         assert f"## {heading}" in content
     steps = re.findall(r"^### (\d+)\. (.+)$", content, re.M)
@@ -128,7 +133,10 @@ def test_generator_prompt_contract():
     assert "safely written and verified or left unchanged" in content
     assert not re.search(r"\bcommit(?:ted)?\b", content)
     assert content.index("## Evidence Rules") < content.index("## Outline")
-    assert ".specify/presets/codebase-memory-context/templates/codebase-context-template.md" in content
+    assert "Run `{SCRIPT}` from the repository root" in content
+    assert "`TEMPLATE_CONTENT`" in content and "`TEMPLATE_NAME`" in content
+    assert "Do not continue\nwith a hardcoded template path" in content
+    assert content.index("### Resolve the active template") < content.index("**Check for extension hooks (before")
 
 
 def test_generator_hook_contract_matches_official_prompt_semantics():
@@ -282,10 +290,11 @@ def test_cli_renders_all_commands_and_remove_restores_core(tmp_path, monkeypatch
         assert ".specify/memory/codebase.md" in rendered
         assert "{SCRIPT}" not in rendered
         assert "__SPECKIT_COMMAND_" not in rendered
-        if name != "speckit.codebase-memory":
-            assert f"scripts/{ {'py': 'python', 'sh': 'bash', 'ps': 'powershell'}[script] }/" in rendered
-        else:
-            assert ".specify/presets/codebase-memory-context/templates/codebase-context-template.md" in rendered
+        assert f"scripts/{ {'py': 'python', 'sh': 'bash', 'ps': 'powershell'}[script] }/" in rendered
+        if name == "speckit.codebase-memory":
+            filename = "resolve_template.py" if script == "py" else f"resolve-template.{ 'sh' if script == 'sh' else 'ps1' }"
+            assert f"{filename} codebase-context-template" in rendered
+            assert "TEMPLATE_CONTENT" in rendered
     assert (project / ".specify/presets" / manifest.id / "templates" / f"{OUTPUT_TEMPLATE}.md").is_file()
     monkeypatch.chdir(project)
     result = CliRunner().invoke(app, ["preset", "remove", manifest.id])
@@ -296,6 +305,43 @@ def test_cli_renders_all_commands_and_remove_restores_core(tmp_path, monkeypatch
         assert ".specify/memory/codebase.md" not in restored
         assert "CODEBASE CONTEXT START" not in restored
         assert "{SCRIPT}" not in restored
+
+
+@pytest.mark.parametrize("script", ["py", "sh"])
+def test_generator_setup_resolves_active_template_and_stops_on_failure(tmp_path, monkeypatch, script):
+    """Execute the installed setup resolver, not an LLM generation workflow."""
+    monkeypatch.chdir(tmp_path)
+    result = CliRunner().invoke(app, ["init", "project", "--integration", "codex",
+        "--script", script, "--preset", str(PRESET_DIR), "--ignore-agent-tools", "--non-interactive"])
+    assert result.exit_code == 0, result.output
+    project = tmp_path / "project"
+    script_path = project / ".specify/scripts" / ("python/resolve_template.py" if script == "py" else "bash/resolve-template.sh")
+    command = [sys.executable if script == "py" else "bash", str(script_path), OUTPUT_TEMPLATE, "--json"]
+    environment = os.environ.copy()
+    environment["SPECKIT_PYTHON_EXECUTABLE"] = sys.executable
+
+    def resolve():
+        return subprocess.run(command, cwd=project, env=environment, capture_output=True, text=True, timeout=30)
+
+    template = (PRESET_DIR / "templates" / f"{OUTPUT_TEMPLATE}.md").read_text()
+    resolved = resolve()
+    assert resolved.returncode == 0, resolved.stderr
+    assert json.loads(resolved.stdout) == {"TEMPLATE_NAME": OUTPUT_TEMPLATE, "TEMPLATE_CONTENT": template}
+
+    override = project / ".specify/templates/overrides" / f"{OUTPUT_TEMPLATE}.md"
+    override.parent.mkdir(parents=True, exist_ok=True)
+    override.write_text(template + "\n<!-- project override -->\n", encoding="utf-8")
+    resolved = resolve()
+    assert resolved.returncode == 0, resolved.stderr
+    assert json.loads(resolved.stdout)["TEMPLATE_CONTENT"] == override.read_text()
+
+    override.unlink()
+    installed = project / ".specify/presets/codebase-memory-context"
+    (installed / "templates" / f"{OUTPUT_TEMPLATE}.md").unlink()
+    resolved = resolve()
+    assert resolved.returncode != 0
+    assert OUTPUT_TEMPLATE in resolved.stderr
+    assert not (project / ".specify/memory/codebase.md").exists()
 
 
 @pytest.mark.backend
