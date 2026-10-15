@@ -115,13 +115,13 @@ The command:
   contract failures stop generation without a hardcoded-path fallback;
 - processes pre-execution hooks (`before_codebase_memory`) using the official
   prompt behavior, within the generator's read-only and re-entrancy boundaries;
-- discovers available and authorized repository-analysis tools before broad
-  analysis, preferring structured navigation when useful and falling back to
-  direct reads/search; no indexing call is required, and material conclusions
-  must be verified against current source;
+- discovers repository-analysis tools and prepares any required local index
+  for the current project: reuse if ready, wait if building, or create if missing;
+  unavailable or unsuccessful tools fall back to direct reads/search,
+  and material conclusions must be verified against current source;
 - identifies project technology stacks via manifest detection;
-- follows seven steps: structure discovery, applicability assessment, mechanism
-  inspection, representative traces, coverage review, synthesis, and safe writing;
+- follows eight steps: initialization, tool/structure discovery, stack detection,
+  mechanism inspection, representative traces, coverage review, synthesis, and safe writing;
 - traces representative business flows (capped at five) prioritizing
   modification boundaries;
 - audits evidence coverage and reports explicit boundaries and limitations;
@@ -140,11 +140,11 @@ source, build files, configuration, tests, ignore files, deployment artifacts,
 or any file other than `.specify/memory/codebase.md`. Ordinary non-sensitive
 configuration and examples can supply evidence; credentials, production data,
 and security-excluded paths remain inaccessible. Analysis tools and hooks cannot
-expand these boundaries. Preconfigured MCP tools may use tool-managed indexes,
-caches, or daemons only within existing authorization and without changing other
-project files or Git state. Tool availability alone does not authorize these
-side effects or `index_repository`; unclear authorization or effects require
-direct reads/search. Feature artifacts and a clean working tree are not required.
+expand these boundaries. Invoking the generator permits local indexing of the
+current project within runtime permissions and without changing other project
+files or Git state. Other stateful operations require separate authorization.
+Unavailable or unsuccessful indexing falls back to direct reads/search.
+Feature artifacts and a clean working tree are not required.
 
 ## When to Use It
 
@@ -271,7 +271,7 @@ python -m venv .venv
 ```
 
 The development dependency pins Spec Kit 1.1.2. Base tests check the manifest,
-seven-step prompt contract, schema 2.0 template, all six installed items, local
+generator prompt contract, schema 2.0 template, all six installed items, local
 ZIP installation, and all five commands rendered and removed across Codex,
 Claude, Copilot, and Gemini with Python, Bash, and PowerShell selection. Generator
 setup tests execute the installed Python and Bash template resolvers for preset

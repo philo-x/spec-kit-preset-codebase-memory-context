@@ -6,6 +6,11 @@ follow [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Prepare required local indexes through available analysis tools: reuse, wait,
+  or create for the current project, with direct reads/search as the fallback.
+
 ### Fixed
 
 - Added the generator's missing Bash, PowerShell, and Python `scripts` declarations
