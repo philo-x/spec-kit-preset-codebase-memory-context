@@ -98,7 +98,8 @@ Follow steps 1-8 in order. Revisit earlier analysis areas when evidence gaps req
 ### 2. Discover Repository Capabilities and Structure
 
 - Discover available repository-analysis tools. Check their schemas, scope, side effects, and provenance/coverage metadata.
-- Check any required index against the current project root. Reuse it if ready, wait if building, or create it if missing. Use supported tool interfaces and verify readiness before querying.
+- For available tools that require an index, check it against the current project root. Reuse it if ready, wait if building, or create it if missing. Verify readiness before querying.
+- If a tool is unavailable, fails, or stops making progress, tell the user (include the error if any), then continue normally using direct reading and search. Do not troubleshoot or retry the failed operation.
 - Map repository purpose, significant components, module responsibilities, dependency directions, entry points, and source/configuration/test locations.
 - Inspect root and child manifests, wrappers, configurations, docs, source, tests, and relevant CI/deployment definitions. Use direct reading/search when graph results are missing or incomplete.
 - Verify material conclusions against current authorized source. Do NOT require backend-specific node counts or metrics.
